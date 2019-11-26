@@ -1,6 +1,8 @@
 package com.future.function.qa.steps.Scoring.Comparison;
 
 import com.future.function.qa.pages.core.HomePage;
+import com.future.function.qa.pages.errors.general.ToastComponent;
+import com.future.function.qa.pages.errors.scoring.AddJudgingPageErrors;
 import com.future.function.qa.pages.scoring.AddJudgingPage;
 import com.future.function.qa.pages.scoring.JudgingListPage;
 import cucumber.api.PendingException;
@@ -16,6 +18,10 @@ public class AddJudgingSteps {
   private JudgingListPage judgingListPage;
 
   private AddJudgingPage addJudgingPage;
+
+  private AddJudgingPageErrors addJudgingErrors;
+
+  private ToastComponent toastComponent;
 
 
   @When("^user click add judging button$")
@@ -143,5 +149,23 @@ public class AddJudgingSteps {
   @And("^user type \"([^\"]*)\" in description input$")
   public void userTypeInDescriptionInput(String description) throws Throwable {
     addJudgingPage.descriptionInput().type(description);
+  }
+
+  @Then("^user should see title error label$")
+  public void userShouldSeeTitleErrorLabel() {
+    addJudgingErrors.titleErrorLabel().shouldBeVisible();
+    addJudgingErrors.titleErrorLabel().shouldBePresent();
+  }
+
+  @And("^user should see description error label$")
+  public void userShouldSeeDescriptionErrorLabel() {
+    addJudgingErrors.descriptionErrorLabel().shouldBeVisible();
+    addJudgingErrors.descriptionErrorLabel().shouldBePresent();
+  }
+
+  @Then("^user should see toast danger with message \"([^\"]*)\"$")
+  public void userShouldSeeToastDangerWithMessage(String message) throws Throwable {
+    toastComponent.toastDanger().shouldBeVisible();
+    assertEquals(toastComponent.toastDanger().getText(), message);
   }
 }

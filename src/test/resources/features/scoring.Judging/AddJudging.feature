@@ -47,3 +47,40 @@ Feature: Add Judging
     And user type "Judging Description" in description input
     And user click save button in add judging page
     Then user should be in final judging page
+
+  @Negative @AddJudgingWithEmptyTitleAndDescription
+  Scenario: Accessing Add Judging Page
+    Given user should be logged in
+    And user should see menu bar
+    And user should see comparisons menu
+    When user click comparisons menu
+    Then user should be in final judging page
+    And user should see add judging button
+    When user click add judging button
+    Then user should be in add final judging page
+    And user should see title label
+    And user should see title input
+    And user should see description label
+    And user should see description input
+    When user click save button in add judging page
+    Then user should see title error label
+    And user should see description error label
+
+  @Negative @AddJudgingWithoutStudents
+  Scenario: Accessing Add Judging Page
+    Given user should be logged in
+    And user should see menu bar
+    And user should see comparisons menu
+    When user click comparisons menu
+    Then user should be in final judging page
+    And user should see add judging button
+    When user click add judging button
+    Then user should be in add final judging page
+    And user should see title label
+    And user should see title input
+    And user should see description label
+    And user should see description input
+    When user type "Judging Title" in title input
+    And user type "Judging Description" in description input
+    And user click save button in add judging page
+    Then user should see toast danger with message "Something went wrong"
