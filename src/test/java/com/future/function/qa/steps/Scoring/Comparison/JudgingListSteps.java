@@ -69,4 +69,10 @@ public class JudgingListSteps {
   public void userShouldSeeMenuBar() {
     judgingListPage.menuBar().shouldBeVisible();
   }
+
+  @When("^user click judging data list in row number (\\d+)$")
+  public void userClickJudgingDataListInRowNumber(int row) {
+    judgingListPage.findJudgingData(row).shouldBeVisible();
+    judgingListPage.findJudgingData(row).click();
+  }
 }
