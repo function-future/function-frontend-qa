@@ -20,19 +20,19 @@ public class JudgingListSteps {
     homePage.open();
   }
 
-  @And("^user should not see comparisons menu$")
-  public void userShouldNotSeeComparisonsMenu() {
-    homePage.comparisonsMenu().shouldNotBePresent();
+  @And("^user should not see comparisons menu with index (\\d+)$")
+  public void userShouldNotSeeComparisonsMenu(int menuIndex) {
+    homePage.comparisonsMenu(menuIndex).shouldNotBePresent();
   }
 
-  @When("^user should see comparisons menu$")
-  public void userSeeComparisonsMenu() {
-    homePage.comparisonsMenu().shouldBeVisible();
+  @When("^user should see comparisons menu with index (\\d+)$")
+  public void userSeeComparisonsMenu(int menuIndex) {
+    homePage.comparisonsMenu(menuIndex).shouldBeVisible();
   }
 
-  @When("^user click comparisons menu$")
-  public void userClickComparisonsMenu() {
-    homePage.comparisonsMenu().click();
+  @When("^user click comparisons menu with index (\\d+)$")
+  public void userClickComparisonsMenu(int menuIndex) {
+    homePage.comparisonsMenu(menuIndex).click();
   }
 
   @Then("^user should see judging data list$")

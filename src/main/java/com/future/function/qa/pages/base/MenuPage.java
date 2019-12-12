@@ -10,9 +10,9 @@ public abstract class MenuPage extends BasePage {
     return find(By.xpath("//div[@class='menu navbar is-hidden-mobile is-hidden-touch']"));
   }
 
-  public WebElementFacade comparisonsMenu() {
+  public WebElementFacade comparisonsMenu(int menuIndex) {
 
-    return find(By.xpath("//body//li[7]"));
+    return find(By.xpath(String.format("//body//li[%s]", menuIndex)));
   }
 
   public WebElementFacade navBar() {

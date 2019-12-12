@@ -27,7 +27,7 @@ public class JudgingListPage extends PaginationPage {
         "/div[@class='main-content']" +
         "/div[@class='auto-overflow-container']" +
         "/div[@class='judging-container']" +
-        "/div[%s]/div[1]/div[1]/div[1]", row)));
+        "/div[%s]/div[1]/div[1]/div[1]", row + 1)));
   }
 
   public WebElementFacade judgingDataDescription(int row) {
@@ -36,7 +36,7 @@ public class JudgingListPage extends PaginationPage {
         "/div[@class='main-content']" +
         "/div[@class='auto-overflow-container']" +
         "/div[@class='judging-container']" +
-        "/div[%s]/div[1]/div[1]/div[2]", row)));
+        "/div[%s]/div[1]/div[1]/div[2]", row + 1)));
   }
 
   public WebElementFacade addJudgingButton() {
@@ -52,5 +52,9 @@ public class JudgingListPage extends PaginationPage {
   public WebElementFacade findSelectBatchDropdown() {
 
     return find(By.xpath("//div[@class='judging__action level']//div[2]"));
+  }
+
+  public int countJudgingDataList() {
+    return findJudgingDataList().findElements(By.className("list-wrapper")).size();
   }
 }
