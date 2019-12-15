@@ -44,4 +44,14 @@ public class StickyNotesSteps {
         stickyNotesPage.editButton().click();
     }
 
+    @And("^sticky note title should equal \"([^\"]*)\"$")
+    public void stickyNoteTitleShouldEqual(String title) {
+        assertEquals(stickyNotesPage.title().getText(), title);
+    }
+
+    @And("^sticky note description should equal \"([^\"]*)\"$")
+    public void stickyNoteDescriptionShouldEqual(String description) {
+        assertEquals(stickyNotesPage.description().getText(), description);
+    }
+
 }

@@ -14,7 +14,20 @@ Feature: Edit Sticky Notes
   @Positive @GoToEditStickyNotesAsAdmin
   Scenario: user go to edit sticky note as admin
     Given user should be logged in
-    And user should see menu bar
     And user should be on sticky notes detail page
     When user click on edit button
     Then user should be on edit sticky notes page
+
+  @Positive @EditStickyNotesAsAdmin @Admin
+  Scenario: Edit sticky notes as admin
+    Given user should be logged in
+    When user click on sticky notes on feeds
+    Then user should be on sticky notes detail page
+    When user click on edit button
+    Then user should be on edit sticky notes page
+    When user type "Sticky Notes Title 2" in sticky notes title input
+    And user type "Sticky Notes Description 2" in sticky notes description input
+    And user click on save button on edit sticky notes page
+    Then user should be on sticky notes detail page
+    And sticky note title should equal "Sticky Notes Title 2"
+    And sticky note description should equal "Sticky Notes Description 2"

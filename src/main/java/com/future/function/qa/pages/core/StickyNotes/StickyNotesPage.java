@@ -16,4 +16,8 @@ public class StickyNotesPage extends MenuPage {
     public WebElementFacade editButton() {
         return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[1]"));
     }
+
+    public WebElementFacade description() {
+        return find(By.xpath("//div[@class='sticky-notes__content']"));
+    }
 }
