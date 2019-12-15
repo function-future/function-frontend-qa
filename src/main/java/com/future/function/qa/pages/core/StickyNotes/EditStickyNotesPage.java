@@ -20,4 +20,8 @@ public class EditStickyNotesPage extends MenuPage {
     public WebElementFacade submitButton() {
         return find(By.xpath("//button[@class='button is-primary']"));
     }
+
+    public WebElementFacade cancelButton() {
+        return find(By.xpath("//button[@class='button is-light']"));
+    }
 }
