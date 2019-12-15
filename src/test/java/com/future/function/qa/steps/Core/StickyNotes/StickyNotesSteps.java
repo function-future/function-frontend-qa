@@ -29,7 +29,7 @@ public class StickyNotesSteps {
         log.info("sticky note title: " + storedTitleText);
     }
 
-    @Then("^user should be in sticky notes detail page$")
+    @Then("^user should be on sticky notes detail page$")
     public void userShouldBeOnStickyNotesPage() {
         stickyNotesPage.shouldBeDisplayed();
     }
