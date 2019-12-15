@@ -15,8 +15,8 @@ Feature: Sticky Notes
   Scenario: Go to sticky note from feeds
     Given user should be logged in
     And user should see menu bar
-    When user click on sticky notes on feeds
     And user remembers sticky notes title on feeds page
+    When user click on sticky notes on feeds
     Then user should be in sticky notes detail page
     And user should see sticky note title is the same as displayed on feeds
 
