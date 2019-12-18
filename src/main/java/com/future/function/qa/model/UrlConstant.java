@@ -6,6 +6,7 @@ public interface UrlConstant {
   String ANNOUNCEMENTS_URL = "http://localhost:10001/announcements";
   String ANNOUNCEMENT_DETAIL_URL = "http://localhost:10001/announcements/{1}/detail";
   String EDIT_ANNOUNCEMENT_URL = "http://localhost:10001/announcements/{1}/edit";
+  String CREATE_ANNOUNCEMENT_URL = "http://localhost:10001/announcements/add";
   String STICKY_NOTES_URL = "http://localhost:10001/sticky-notes";
   String EDIT_STICKY_NOTES_URL = "http://localhost:10001/sticky-notes/edit";
   String JUDGING_LIST_URL = "https://localhost:10001/final-judgings";
