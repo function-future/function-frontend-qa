@@ -20,9 +20,9 @@ Feature: Announcements
     Then user should be on announcements page
     When user click on an announcement more button on announcements page in row number 1
     Then user should see dropdown action of the announcement in row number 1
-    When user click on delete button on dropdown action
+    When user click on delete button on dropdown action in row number 1
     Then user should see delete confirmation modal
     When user click on delete button on delete confirmation modal
     Then user should be on announcements page
-    And user should see success toast message
+    And user should see toast success with message "Successfully delete announcement"
 

@@ -21,4 +21,16 @@ public class AnnouncementsPage extends MenuPage {
     return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[1]/div[1]/div[1]", row)));
   }
 
+  public WebElementFacade findAnnouncementMoreButton(int row) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[2]/div[1]/div[1]/button[1]", row)));
+  }
+
+  public WebElementFacade findAnnouncementActionDropdown(int row) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[2]/div[1]/div[3]", row)));
+  }
+
+  public WebElementFacade findDeleteButtonOnActionDropdown(int row) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[2]/div[1]/div[3]/div[1]/a[2]", row)));
+  }
+
 }

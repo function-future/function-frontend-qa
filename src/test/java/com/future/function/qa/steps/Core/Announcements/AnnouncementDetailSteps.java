@@ -83,11 +83,6 @@ public class AnnouncementDetailSteps {
       modalDeleteConfirmation.confirmationDialog().shouldBeVisible();
     }
 
-    @And("^user should see delete confirmation modal contains \"([^\"]*)\" text$")
-    public void userShouldSeeDeleteConfirmationModalContainText(String text) {
-      assertEquals(modalDeleteConfirmation.confirmationText().getText(), text);
-    }
-
     @When("^user click on delete button on delete confirmation modal$")
     public void userClickDeleteButtonOnDeleteModal() {
       modalDeleteConfirmation.deleteButton().click();

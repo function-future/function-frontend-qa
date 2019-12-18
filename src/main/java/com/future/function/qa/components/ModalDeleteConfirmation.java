@@ -10,12 +10,8 @@ public class ModalDeleteConfirmation extends PageObject {
     return find(By.xpath("//div[@class='modal__container']"));
   }
 
-  public WebElementFacade confirmationText() {
-    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]"));
-  }
-
   public WebElementFacade deleteButton() {
-    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[3]/button[2]"));
+    return find(By.xpath("//button[@class='button modal__footer__button is-danger is-fullwidth']"));
   }
 
 }

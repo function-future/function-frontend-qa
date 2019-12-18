@@ -44,7 +44,6 @@ Feature: Announcement Detail
     And user should see announcement title is the same
     When user click on delete button on announcement detail page
     Then user should see delete confirmation modal
-    And user should see delete confirmation modal contains "Are you sure you want to delete this announcement?" text
     When user click on delete button on delete confirmation modal
     Then user should be on announcements page
     And user should see toast success with message "Successfully delete announcement"
