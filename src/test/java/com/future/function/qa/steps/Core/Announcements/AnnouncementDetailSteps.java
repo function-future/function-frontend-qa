@@ -1,5 +1,6 @@
 package com.future.function.qa.steps.Core.Announcements;
 
+import com.future.function.qa.components.ModalDeleteConfirmation;
 import com.future.function.qa.pages.core.Announcements.AnnouncementDetailPage;
 import com.future.function.qa.pages.core.Announcements.AnnouncementsPage;
 import com.future.function.qa.pages.core.HomePage;
@@ -16,6 +17,7 @@ public class AnnouncementDetailSteps {
     private HomePage homePage;
     private AnnouncementDetailPage announcementDetailPage;
     private AnnouncementsPage announcementsPage;
+    private ModalDeleteConfirmation modalDeleteConfirmation;
     private String storedTitleText;
 
     @Then("^user should be on announcement detail page$")
@@ -68,5 +70,26 @@ public class AnnouncementDetailSteps {
     public void userClickOnAnnouncementOnAnnouncementsWithIndex(int row) {
         announcementsPage.findAnnouncement(row).shouldBeVisible();
         announcementsPage.findAnnouncement(row).click();
+    }
+
+    @When("^user click on delete button on announcement detail page$")
+    public void userClickDeleteButtonOnAnnouncementDetailPage() {
+      announcementDetailPage.deleteButton().shouldBeVisible();
+      announcementDetailPage.deleteButton().click();
+    }
+
+    @Then("^user should see delete confirmation modal$")
+    public void userShouldSeeDeleteConfirmationModal() {
+      modalDeleteConfirmation.confirmationDialog().shouldBeVisible();
+    }
+
+    @And("^user should see delete confirmation modal contains \"([^\"]*)\" text$")
+    public void userShouldSeeDeleteConfirmationModalContainText(String text) {
+      assertEquals(modalDeleteConfirmation.confirmationText().getText(), text);
+    }
+
+    @When("^user click on delete button on delete confirmation modal$")
+    public void userClickDeleteButtonOnDeleteModal() {
+      modalDeleteConfirmation.deleteButton().click();
     }
 }

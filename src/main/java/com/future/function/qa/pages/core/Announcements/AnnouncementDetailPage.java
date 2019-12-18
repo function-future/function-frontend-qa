@@ -13,4 +13,8 @@ public class AnnouncementDetailPage extends MenuPage {
         return find(By.xpath("//span[@class='is-size-5 has-text-weight-bold']"));
     }
 
+    public WebElementFacade deleteButton() {
+        return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[2]"));
+    }
+
 }
