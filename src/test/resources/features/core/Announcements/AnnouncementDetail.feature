@@ -30,18 +30,18 @@ Feature: Announcement Detail
     When user click on an announcement on announcements page in row number 1
     Then user should be on announcement detail page
     And user should see announcement title is the same
-
-  @Positive @DeleteAnnouncementFromAnnouncementDetailPage
-  Scenario: user delete announcement from announcement detail page
-    Given user should be logged in
-    And user should see menu bar
-    And user should see announcements menu
-    When user click announcements menu
-    Then user should be on announcements page
-    When user click on an announcement on announcements page in row number 1
-    Then user should be on announcement detail page
-    When user click on delete button on announcement detail page
-    Then user should see delete confirmation modal
-    When user click on delete button on delete confirmation modal
-    Then user should be on announcements page
-    And user should see success toast message
+#
+#  @Positive @DeleteAnnouncementFromAnnouncementDetailPage
+#  Scenario: user delete announcement from announcement detail page
+#    Given user should be logged in
+#    And user should see menu bar
+#    And user should see announcements menu
+#    When user click announcements menu
+#    Then user should be on announcements page
+#    When user click on an announcement on announcements page in row number 1
+#    Then user should be on announcement detail page
+#    When user click on delete button on announcement detail page
+#    Then user should see delete confirmation modal
+#    When user click on delete button on delete confirmation modal
+#    Then user should be on announcements page
+#    And user should see success toast message
