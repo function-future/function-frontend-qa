@@ -33,4 +33,7 @@ public class AnnouncementsPage extends MenuPage {
     return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[2]/div[1]/div[3]/div[1]/a[2]", row)));
   }
 
+  public WebElementFacade findEditButtonOnActionDropdown(int row) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]", row)));
+  }
 }
