@@ -15,8 +15,8 @@ Feature: Edit Announcement
   Scenario: user click on edit button on announcement detail page to go to edit announcement page
     Given user should be logged in
     And user should see menu bar
-    And user should see announcements menu
-    When user click announcements menu
+    And user should see announcements menu on row 2
+    When user click announcements menu on row 2
     Then user should be on announcements page
     And user remembers announcement title on announcements page in row number 1
     When user click on an announcement more button on announcements page in row number 1
@@ -34,8 +34,8 @@ Feature: Edit Announcement
   Scenario: user click on edit button on announcement detail page to go to edit announcement page
     Given user should be logged in
     And user should see menu bar
-    And user should see announcements menu
-    When user click announcements menu
+    And user should see announcements menu on row 2
+    When user click announcements menu on row 2
     Then user should be on announcements page
     When user click on an announcement on announcements page in row number 1
     Then user should be on announcement detail page

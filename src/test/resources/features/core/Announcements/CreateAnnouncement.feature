@@ -16,8 +16,8 @@ Feature: Create Announcement
   Scenario: user create announcement
     Given user should be logged in
     And user should see menu bar
-    And user should see announcements menu
-    When user click announcements menu
+    And user should see announcements menu on row 2
+    When user click announcements menu on row 2
     Then user should be on announcements page
     When user click on add button on announcements page
     Then user should be on create announcements page

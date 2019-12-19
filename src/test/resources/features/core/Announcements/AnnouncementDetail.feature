@@ -23,8 +23,8 @@ Feature: Announcement Detail
   Scenario: user click on an announcement on announcements page and redirect to announcements detail page
     Given user should be logged in
     And user should see menu bar
-    And user should see announcements menu
-    When user click announcements menu
+    And user should see announcements menu on row 2
+    When user click announcements menu on row 2
     Then user should be on announcements page
     And user remembers announcement title on announcements page in row number 1
     When user click on an announcement on announcements page in row number 1
@@ -35,8 +35,8 @@ Feature: Announcement Detail
   Scenario: user delete announcement from announcement detail page
     Given user should be logged in
     And user should see menu bar
-    And user should see announcements menu
-    When user click announcements menu
+    And user should see announcements menu on row 2
+    When user click announcements menu on row 2
     Then user should be on announcements page
     And user remembers announcement title on announcements page in row number 1
     When user click on an announcement on announcements page in row number 1

@@ -15,8 +15,8 @@ Feature: Announcements
   Scenario: user delete announcement from announcements page
     Given user should be logged in
     And user should see menu bar
-    And user should see announcements menu
-    When user click announcements menu
+    And user should see announcements menu on row 2
+    When user click announcements menu on row 2
     Then user should be on announcements page
     When user click on an announcement more button on announcements page in row number 1
     Then user should see dropdown action of the announcement in row number 1

@@ -43,14 +43,14 @@ public class AnnouncementDetailSteps {
         assertEquals(announcementDetailPage.title().getText(), storedTitleText);
     }
 
-    @And("^user should see announcements menu$")
-    public void userSeeAnnouncementsMenu() {
-        homePage.findMenuWithIndex(2).shouldBeVisible();
+    @And("^user should see announcements menu on row (\\d+)$")
+    public void userSeeAnnouncementsMenu(int row) {
+        homePage.findMenuWithIndex(row).shouldBeVisible();
     }
 
-    @When("^user click announcements menu$")
-    public void userClickAnnouncementsMenu() {
-        homePage.findMenuWithIndex(2).click();
+    @When("^user click announcements menu on row (\\d+)$")
+    public void userClickAnnouncementsMenu(int row) {
+        homePage.findMenuWithIndex(row).click();
     }
 
     @When("^user click on add button on announcements page$")
