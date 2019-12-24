@@ -20,8 +20,8 @@ Feature: Create Activity Blog
     Then user should be on activity blogs page
     When user click on add button on activity blogs page
     Then user should be on create activity blog page
-    When user type "Announcement Title" in activity blog title input
-    And user type "Announcement Description" in activity blog description input
+    When user type "Announcement Title" in create activity blog title input
+    And user type "Announcement Description" in create activity blog description input
     And user click on save button on create activity blog page
     Then user should be on activity blogs page
     And user should see toast success with message "Successfully created new activity blog"
