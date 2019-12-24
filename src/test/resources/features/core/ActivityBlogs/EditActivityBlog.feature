@@ -23,13 +23,13 @@ Feature: Edit Activity Blog
     Then user should see dropdown action of the activity blog in row number 1
     When user click on edit button on dropdown action of activity blog in row number 1
     Then user should be on edit activity blog page
-    And user should see title on edit activity blog page is the same
-    When user type "Activity Blog Title" in activity blog title input
-    And user type "Activity Blog Description" in activity blog description input
+    And user should see title on edit activity blog page is the same as activity blogs page
+    When user type "Activity Blog Title Edited" in edit activity blog title input
+    And user type "Activity Blog Description Edited" in edit activity blog description input
     And user click on save button on edit activity blog page
     Then user should be on activity blog detail page
-    And activity blog title on activity blog detail should equal "Activity Blog Title"
-    And activity blog description on activity blog detail should equal "Activity Blog Description"
+    And activity blog title on activity blog detail should equal "Activity Blog Title Edited"
+    And activity blog description on activity blog detail should equal "Activity Blog Description Edited"
 
 
   @Positive @EditActivityBlogFromActivityBlogDetailPage
@@ -45,10 +45,9 @@ Feature: Edit Activity Blog
     And user should see activity blog title is the same
     When user click on edit button on activity blog detail page
     Then user should be on edit activity blog page
-    And user should see title on edit activity blog page is the same
-    When user type "Activity Blog Title" in activity blog title input
-    And user type "Activity Blog Description" in activity blog description input
+    When user type "Activity Blog Title Edited Two" in edit activity blog title input
+    And user type "Activity Blog Description Edited Two" in edit activity blog description input
     And user click on save button on edit activity blog page
     Then user should be on activity blog detail page
-    And activity blog title on activity blog detail should equal "Activity Blog Title"
-    And activity blog description on activity blog detail should equal "Activity Blog Description"
+    And activity blog title on activity blog detail should equal "Activity Blog Title Edited Two"
+    And activity blog description on activity blog detail should equal "Activity Blog Description Edited Two"
