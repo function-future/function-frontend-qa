@@ -13,4 +13,19 @@ public class BatchesPage extends MenuPage {
         return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[1]"));
     }
 
+    public WebElementFacade findBatchMoreButtonOnRow(int row) {
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]", row)));
+    }
+
+    public WebElementFacade batchDropdownMenuOnRow(int row) {
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]", row)));
+    }
+
+    public WebElementFacade batchEditButtonOnDropdownMenuOnRow(int row) {
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]", row)));
+    }
+
+    public WebElementFacade batchDeleteButtonOnDropdownMenuOnRow(int row) {
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[2]", row)));
+    }
 }
