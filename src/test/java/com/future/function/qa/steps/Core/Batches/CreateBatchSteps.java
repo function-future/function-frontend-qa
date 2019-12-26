@@ -34,4 +34,20 @@ public class CreateBatchSteps {
         batchesPage.addButton().click();
     }
 
+    @When("^user type \"([^\"]*)\" in batch code input in create batch page$")
+    public void userTypeStringInBatchCodeInput(String code) {
+        createBatchPage.codeInput().type(code);
+    }
+
+    @And("^user type \"([^\"]*)\" in batch name input in create batch page$")
+    public void userTypeStringInBatchBatchNameInput(String name) {
+        createBatchPage.nameInput().type(name);
+    }
+
+    @And("^user click on save button on create batch page$")
+    public void userClickOnSaveButton() {
+        createBatchPage.saveButton().shouldBeVisible();
+        createBatchPage.saveButton().click();
+    }
+
 }

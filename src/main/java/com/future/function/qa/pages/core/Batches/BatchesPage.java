@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 public class BatchesPage extends MenuPage {
 
     public WebElementFacade addButton() {
-        return find(By.xpath(""));
+        return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[1]"));
     }
 
 }
