@@ -11,7 +11,7 @@ Feature: Create Batch
       | password | administratorfunctionapp |
     And user should be in homepage
 
-  @Positive @CreateBatch
+  @Positive @CreateBatchSuccess
   Scenario: user delete batches
     Given user should be logged in
     And user should see menu bar
