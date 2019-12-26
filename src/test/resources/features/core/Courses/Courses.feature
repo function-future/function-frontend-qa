@@ -61,3 +61,21 @@ Feature: Delete Course
     When user click on share button on share course modal
     Then user should see toast success with message "Successfully share course"
     And user should be on courses page
+
+  @Positive @ShareCourse
+  Scenario: user share course to batch
+    Given user should be logged in
+    And user should see menu bar
+    And user should see courses menu on row 5
+    When user click courses menu on row 5
+    Then user should be on courses page
+    And user should be on courses tab on index 2
+    When user click on an course more button on courses page in row number 1
+    Then user should see dropdown action of the course in row number 1
+    When user click on share course button on course dropdown action in row number 1
+    Then user should see share course modal
+    When user click on batch on share course modal on row 1
+    Then batch radio button on row 1 should be selected
+    When user click on share button on share course modal
+    Then user should see toast success with message "Successfully share course"
+    And user should be on courses page
