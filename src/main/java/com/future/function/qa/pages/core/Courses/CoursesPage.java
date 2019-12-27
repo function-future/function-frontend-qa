@@ -17,4 +17,27 @@ public class CoursesPage extends MenuPage {
     return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/nav[1]/ul[1]/li[%s]", index)));
   }
 
+  public WebElementFacade findMasterCourseOrCourseOnTabIndexOnRow(int tabIndex, int row) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]" +
+            "/div[1]/div[1]/div[1]/section[1]/div[%s]/div[2]/div[$s]", tabIndex, row)));
+  }
+
+  public WebElementFacade findMasterCourseOrCourseMoreButtonOnTabIndexOnRow(int tabIndex, int row) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]" +
+            "/div[1]/div[1]/div[1]/section[1]/div[%s]/div[2]/div[%s]" +
+            "/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]", tabIndex, row)));
+  }
+
+  public WebElementFacade findMasterCourseOrCourseDropdownActionOnTabIndexOnRow(int tabIndex, int row) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]" +
+            "/div[1]/div[1]/div[1]/section[1]/div[%s]/div[2]/div[%s]" +
+            "/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]", tabIndex, row)));
+  }
+
+  public WebElementFacade findActionOnMasterCourseOrCourseDropdownOnTabIndexOnRowOnIndex(int tabIndex, int row, int index) {
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]" +
+            "/div[1]/div[1]/div[1]/section[1]/div[%s]/div[2]/div[%s]" +
+            "/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[%s]", tabIndex, row, index)));
+  }
+
 }
