@@ -29,5 +29,4 @@ public class EditCourseSteps {
     editCoursePage.saveButton().click();
   }
 
-
 }
