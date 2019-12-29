@@ -78,7 +78,7 @@ public class CreateUserSteps {
         createUserPage.saveButton().click();
     }
 
-    protected String getSaltString(int length) {
+    private String getSaltString(int length) {
         String string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
