@@ -1,6 +1,5 @@
 package com.future.function.qa.pages.core.Courses;
 
-import com.future.function.qa.pages.base.MenuPage;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 
@@ -18,4 +17,19 @@ public class CourseDetailPage extends MasterCourseDetailPage {
         return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[2]"));
     }
 
+    public WebElementFacade discussionInput() {
+        return find(By.xpath("//textarea[@placeholder='Start a discussion...']"));
+    }
+
+    public WebElementFacade postDiscussionButton() {
+        return find(By.xpath("//article/div/div[contains(@class, 'field has-text-right')]/button"));
+    }
+
+    public WebElementFacade findDiscussionOnRow(int row) {
+        return find(By.xpath(String.format("(//article/div/div[contains(@class, 'content')])[%s]", row)));
+    }
+
+    public WebElementFacade findDiscussionTextOnRow(int row) {
+        return find(By.xpath(String.format("(//article/div/div[contains(@class, 'content')])[%s]/div[contains(@class, 'course-detail__container__discussion__list-content')]", row)));
+    }
 }

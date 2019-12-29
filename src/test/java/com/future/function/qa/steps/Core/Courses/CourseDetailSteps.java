@@ -64,4 +64,22 @@ public class CourseDetailSteps {
         courseDetailPage.editButton().shouldBeVisible();
         courseDetailPage.editButton().click();
     }
+
+    @When("^user type \"([^\"]*)\" on discussion input on course detail page$")
+    public void userTypeOnDiscussionInputOnCourseDetailPage(String text) {
+        courseDetailPage.discussionInput().shouldBeVisible();
+        courseDetailPage.discussionInput().type(text);
+    }
+
+    @And("^user click on Post discussion button on course detail page$")
+    public void userClickOnPostDiscussionButton() {
+        courseDetailPage.postDiscussionButton().shouldBeVisible();
+        courseDetailPage.postDiscussionButton().click();
+    }
+    
+    @And("^user should see \"([^\"]*)\" discussion that was posted by user$")
+    public void userShouldSeeDiscussionThatWasPostedByUser(String text) {
+        courseDetailPage.findDiscussionOnRow(1).shouldBeVisible();
+        assertEquals(text, courseDetailPage.findDiscussionTextOnRow(1).getText());
+    }
 }
