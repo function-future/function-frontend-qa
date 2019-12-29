@@ -47,4 +47,10 @@ Feature: Create student, mentor, judge, admin
     And role select box should be visible
     And batch select box should not be visible
     And role selected on create user page should be "Admin"
-    #to be continued
+    When user type "Admin One" in name input on create user page
+    And user type "081212121212" in phone input on create user page
+    And user type "admin@email.com" in email input on create user page
+    And user type "Address 12345" in address input on create user page
+    And user click on save button on create user page
+    Then user should be on users page with tab index 1
+    And user should see toast success with message "Successfully created new user"
