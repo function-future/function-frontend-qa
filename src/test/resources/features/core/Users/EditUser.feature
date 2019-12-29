@@ -11,7 +11,7 @@ Feature: Edit student, mentor, judge, admin
       | password | administratorfunctionapp |
     And user should be in homepage
 
-  @Positive @EditStudentFromUsersPage
+  @Positive @EditStudent
   Scenario: user edit student from users page
     Given user should be logged in
     And user should see menu bar
