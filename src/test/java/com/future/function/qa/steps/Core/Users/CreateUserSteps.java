@@ -4,11 +4,14 @@ import com.future.function.qa.pages.core.Users.CreateUserPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
+import java.util.Random;
+
 import static org.junit.Assert.assertEquals;
 
 public class CreateUserSteps {
 
     private CreateUserPage createUserPage;
+    private String randomString = getSaltString(6);
 
     @Then("^user should be on create user page$")
     public void userShouldBeOnCreateUserPage() {
@@ -37,7 +40,7 @@ public class CreateUserSteps {
 
     @And("^user type \"([^\"]*)\" in name input on create user page$")
     public void userTypeInNameInput(String text) {
-        createUserPage.nameInput().type(text);
+        createUserPage.nameInput().type(randomString + " " + text);
     }
 
     @And("^user type \"([^\"]*)\" in phone input on create user page$")
@@ -47,7 +50,7 @@ public class CreateUserSteps {
 
     @And("^user type \"([^\"]*)\" in email input on create user page$")
     public void userTypeInEmailInput(String text) {
-        createUserPage.emailInput().type(text);
+        createUserPage.emailInput().type(randomString + text);
     }
 
     @And("^user type \"([^\"]*)\" in university input on create user page$")
@@ -73,6 +76,17 @@ public class CreateUserSteps {
     @And("^user click on save button on create user page$")
     public void userClickOnSaveButton() {
         createUserPage.saveButton().click();
+    }
+
+    protected String getSaltString(int length) {
+        String string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < length) {
+            int index = (int) (rnd.nextFloat() * string.length());
+            salt.append(string.charAt(index));
+        }
+        return salt.toString();
     }
 
 }

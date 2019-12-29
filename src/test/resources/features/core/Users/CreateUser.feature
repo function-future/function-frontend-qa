@@ -22,7 +22,7 @@ Feature: Create student, mentor, judge, admin
     Then user should be on create user page
     And batch select box should be visible
     And role select box should not be visible
-    When user type "Student One" in name input on create user page
+    When user type "Student" in name input on create user page
     And user type "081212121212" in phone input on create user page
     And user type "email@email.com" in email input on create user page
     And user type "University" in university input on create user page
@@ -47,9 +47,55 @@ Feature: Create student, mentor, judge, admin
     And role select box should be visible
     And batch select box should not be visible
     And role selected on create user page should be "Admin"
-    When user type "Admin One" in name input on create user page
+    When user type "Admin" in name input on create user page
     And user type "081212121212" in phone input on create user page
     And user type "admin@email.com" in email input on create user page
+    And user type "Address 12345" in address input on create user page
+    And user click on save button on create user page
+    Then user should be on users page with tab index 1
+    And user should see toast success with message "Successfully created new user"
+
+  @Positive @CreateMentor
+  Scenario: user add mentor
+    Given user should be logged in
+    And user should see menu bar
+    And user should see users menu on row 6
+    When user click users menu on row 6
+    Then user should be on users page with tab index 1
+    And user should see "Mentors" tab on index 3
+    When user click tab on index 3
+    And user should be on users page with tab index 3
+    When user click on add button on users page on tab index 3
+    Then user should be on create user page
+    And role select box should be visible
+    And batch select box should not be visible
+    And role selected on create user page should be "Mentor"
+    When user type "Mentor" in name input on create user page
+    And user type "081212121212" in phone input on create user page
+    And user type "mentor@email.com" in email input on create user page
+    And user type "Address 12345" in address input on create user page
+    And user click on save button on create user page
+    Then user should be on users page with tab index 1
+    And user should see toast success with message "Successfully created new user"
+
+  @Positive @CreateJudge
+  Scenario: user add judge
+    Given user should be logged in
+    And user should see menu bar
+    And user should see users menu on row 6
+    When user click users menu on row 6
+    Then user should be on users page with tab index 1
+    And user should see "Judges" tab on index 4
+    When user click tab on index 4
+    And user should be on users page with tab index 4
+    When user click on add button on users page on tab index 4
+    Then user should be on create user page
+    And role select box should be visible
+    And batch select box should not be visible
+    And role selected on create user page should be "Judge"
+    When user type "Judge" in name input on create user page
+    And user type "081212121212" in phone input on create user page
+    And user type "judge@email.com" in email input on create user page
     And user type "Address 12345" in address input on create user page
     And user click on save button on create user page
     Then user should be on users page with tab index 1
