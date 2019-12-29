@@ -6,7 +6,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.NamedUrl;
 import org.openqa.selenium.By;
 
-@NamedUrl(name = "batchId", url = UrlConstant.EDIT_BATCH_URL)
 public class EditCoursePage extends MenuPage {
 
   public WebElementFacade titleInput() {
