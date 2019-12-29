@@ -1,5 +1,5 @@
 @Core @Users @UsersPage @Regression
-Feature: Edit and delete student, mentor, judge, admin from users page
+Feature: Users page
 
   Background:
     When user access function website
