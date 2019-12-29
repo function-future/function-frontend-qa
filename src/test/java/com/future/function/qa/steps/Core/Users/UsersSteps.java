@@ -46,4 +46,20 @@ public class UsersSteps {
     public void userClickOnTabOnIndex(int index) {
         usersPage.usersTabs(index).click();
     }
+
+    @When("^user click on more button on tab index (\\d+) on users page in row number (\\d+)$")
+    public void userClickOnMoreOnTabIndexInRow(int tabIndex, int row) {
+        usersPage.findMoreButtonOnTabIndexOnRow(tabIndex, row).shouldBeVisible();
+        usersPage.findMoreButtonOnTabIndexOnRow(tabIndex, row).click();
+    }
+
+    @Then("^user should see dropdown action of the user in tab index (\\d+) in row number (\\d+)$")
+    public void userShouldSeeDropdownOnTabIndexInRow(int tabIndex, int row) {
+        usersPage.findDropdownOnTabIndexOnRowOnIndex(tabIndex, row).shouldBeVisible();
+    }
+
+    @When("^user click on button on index (\\d+) on user dropdown action in row number (\\d+) on tab index (\\d+)$")
+    public void userShouldSeeDropdownOnTabIndexInRow(int index, int row, int tabIndex) {
+        usersPage.findMoreButtonActionOnTabIndexOnRowOnIndex(tabIndex, row, index).click();
+    }
 }
