@@ -87,4 +87,14 @@ public class AnnouncementDetailSteps {
     public void userClickDeleteButtonOnDeleteModal() {
       modalDeleteConfirmation.deleteButton().click();
     }
+
+    @And("^user should not be able to see edit button on announcement detail page$")
+    public void userShouldNotSeeEditButton() {
+        announcementDetailPage.editButton().shouldNotBeVisible();
+    }
+
+    @And("^user should not be able to see delete button on announcement detail page$")
+    public void userShouldNotSeeDeleteButton() {
+        announcementDetailPage.deleteButton().shouldNotBeVisible();
+    }
 }

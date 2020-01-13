@@ -19,7 +19,7 @@ Feature: Announcement Detail Page with role as Student
     When user click announcements menu on row 2
     Then user should be on announcements page
     And user should not be able to see add button on announcements page
-    And user should not be able to see dropdown action of announcement on announcements page
+    And user should not be able to see announcement more button on announcements page in row number 1
 
   @Positive @StudentClickAnnouncementOnAnnouncements
   Scenario: student click on an announcement on announcements page and redirect to announcements detail page

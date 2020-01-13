@@ -42,4 +42,14 @@ public class AnnouncementsSteps {
         announcementsPage.findDeleteButtonOnActionDropdown(row).shouldBeVisible();
         announcementsPage.findDeleteButtonOnActionDropdown(row).click();
     }
+
+    @And("^user should not be able to see add button on announcements page$")
+    public void userShouldNotBeAbleToSeeAddButtonOnAnnouncementPage() {
+        announcementsPage.addButton().shouldNotBeVisible();
+    }
+
+    @And("^user should not be able to see announcement more button on announcements page in row number (\\d+)$")
+    public void userShouldNotBeAbleToSeeMoreButtonOnRow(int row) {
+        announcementsPage.findAnnouncementMoreButton(row).shouldNotBeVisible();
+    }
 }
