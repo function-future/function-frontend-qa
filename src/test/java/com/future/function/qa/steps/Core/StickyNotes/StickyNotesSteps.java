@@ -54,4 +54,9 @@ public class StickyNotesSteps {
         assertEquals(stickyNotesPage.description().getText(), description);
     }
 
+    @And("^user should not be able to see edit button on sticky notes page$")
+    public void userShouldNotSeeEditButton() {
+        stickyNotesPage.editButton().shouldNotBeVisible();
+    }
+
 }
