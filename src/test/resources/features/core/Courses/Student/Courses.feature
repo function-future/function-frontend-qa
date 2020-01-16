@@ -1,5 +1,5 @@
 @Core @Courses @StudentCourse @Regression
-Feature: Delete Course
+Feature: Delete Course with role as Student
 
   Background:
     When user access function website
