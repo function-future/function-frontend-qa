@@ -20,4 +20,3 @@ Feature: Delete Course
     Then user should be on courses page
     And user should be on courses page with tab index 1
     And user should not be able to see add button on courses page
-    And user should not be able to see share to batch button on courses page

@@ -89,4 +89,9 @@ public class CoursesSteps {
     modalShareCourse.shareButton().click();
   }
 
+  @And("^user should not be able to see add button on courses page$")
+  public void userShouldNotSeeAddButton() {
+    coursesPage.addButton().shouldNotBeVisible();
+  }
+
 }
