@@ -1,5 +1,5 @@
-@Core @AnnouncementDetail @Student @StudentAnnouncementDetail @Regression
-Feature: Announcement Detail Page with role as Student
+@Core @AnnouncementDetail @Student @StudentAnnouncements @Regression
+Feature: Announcement Page with role as Student
 
   Background:
     When user access function website
