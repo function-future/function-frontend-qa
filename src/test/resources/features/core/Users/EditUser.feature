@@ -1,4 +1,4 @@
-@Core @Users @EditUser @Regression
+@Core @Admin @Users @EditUser @Regression
 Feature: Edit student, mentor, judge, admin
 
   Background:

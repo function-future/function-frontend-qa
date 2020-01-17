@@ -1,4 +1,4 @@
-@Core @Courses @EditCourseAndCourse @Regression
+@Core @Admin @Courses @EditCourseAndCourse @Regression
 Feature: Edit Course and Course
 
   Background:

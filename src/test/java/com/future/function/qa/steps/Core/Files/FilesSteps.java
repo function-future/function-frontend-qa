@@ -7,11 +7,14 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.util.*;
+
 public class FilesSteps {
 
     private HomePage homePage;
     private FilesPage filesPage;
     private ModalCreateFolder modalCreateFolder;
+    private String randomString = getSaltString(6);
 
     @And("^user should see files menu on row (\\d+)$")
     public void userSeeFilesMenu(int row) {
@@ -41,7 +44,7 @@ public class FilesSteps {
 
     @When("^user type in \"([^\"]*)\" in folder name input box on create folder modal$")
     public void userTypeInFolderNameInputBox(String name) {
-        modalCreateFolder.folderNameInput().type(name);
+        modalCreateFolder.folderNameInput().type(name + " " + randomString);
     }
 
     @And("^user click on create button on create folder modal$")
@@ -50,4 +53,14 @@ public class FilesSteps {
         modalCreateFolder.createButton().click();
     }
 
+    private String getSaltString(int length) {
+        String string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < length) {
+            int index = (int) (rnd.nextFloat() * string.length());
+            salt.append(string.charAt(index));
+        }
+        return salt.toString();
+    }
 }
