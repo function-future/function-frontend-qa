@@ -54,12 +54,10 @@ Feature: Delete Course
     And user should be on courses page with tab index 1
     And user should see toast success with message "Successfully create new master course"
     Then user should be on courses page
-    And user should see courses tab on index 2
-    When user click on courses tab on index 2
-    And user should be on courses page with tab index 2
-    When user click on an course more button on tab index 2 on courses page in row number 1
-    Then user should see dropdown action of the course in tab index 2 in row number 1
-    When user click on button on index 2 on course dropdown action in row number 1 on tab index 2
+    And user should be on courses page with tab index 1
+    When user click on an course more button on tab index 1 on courses page in row number 1
+    Then user should see dropdown action of the course in tab index 1 in row number 1
+    When user click on button on index 2 on course dropdown action in row number 1 on tab index 1
     Then user should see share course modal
     When user click on batch on share course modal on row 1
     Then batch radio button on row 1 should be selected
