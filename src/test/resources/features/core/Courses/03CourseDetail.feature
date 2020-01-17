@@ -1,4 +1,4 @@
-@Core @Courses @CourseDetail @Regression
+@Core @Admin @Courses @CourseDetail @Regression
 Feature: Course Detail
 
   Background:

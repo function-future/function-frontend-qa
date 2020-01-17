@@ -1,4 +1,4 @@
-@Core @Courses @CreateMasterCourseAndCourse @Regression
+@Core @Admin @Courses @CreateMasterCourseAndCourse @Regression
 Feature: Create Master Course and Course
 
   Background:

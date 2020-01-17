@@ -1,4 +1,4 @@
-@Core @Courses @DeleteCourse @Regression
+@Core @Admin @Courses @DeleteCourse @Regression
 Feature: Delete Course
 
   Background:
