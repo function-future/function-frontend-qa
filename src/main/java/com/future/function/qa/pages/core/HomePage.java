@@ -25,12 +25,12 @@ public class HomePage extends MenuPage {
     }
 
     public WebElementFacade findAnnouncement(int row) {
-        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[%s]", row + 1)));
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[%s]", row)));
     }
 
     public WebElementFacade findAnnouncementTitle(int row) {
-        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[%s]" +
-                "/div[1]/div[1]/div[1]/div[1]/div[1]", row + 1)));
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[%s]" +
+                "/div[1]/div[1]/div[1]/div[1]", row)));
     }
 
     public WebElementFacade stickyNotesTitle() {
