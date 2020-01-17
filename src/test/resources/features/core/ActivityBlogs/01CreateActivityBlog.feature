@@ -1,4 +1,4 @@
-@Core @CreateActivityBlog @Regression
+@Core @ActivityBlogs @CreateActivityBlog @Regression
 Feature: Create Activity Blog
 
   Background:

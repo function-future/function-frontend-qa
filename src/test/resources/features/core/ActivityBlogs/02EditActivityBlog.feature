@@ -1,4 +1,4 @@
-@Core @EditActivityBlog @Regression
+@Core @ActivityBlogs @EditActivityBlog @Regression
 Feature: Edit Activity Blog
 
   Background:

@@ -1,4 +1,4 @@
-@Core @ActivityBlogDetail @Regression
+@Core @ActivityBlogs @ActivityBlogDetail @Regression
 Feature: Activity Blog Detail Page
 
   Background:
