@@ -1,5 +1,5 @@
-@Core @CreateAnnouncement @Regression
-Feature: Create Announcement
+@Core @Announcements @AnnouncementDetail @Regression
+Feature: Announcements
 
   Background:
     When user access function website
@@ -11,9 +11,8 @@ Feature: Create Announcement
       | password | administratorfunctionapp |
     And user should be in homepage
 
-
-  @Positive @SuccessCreateAnnouncement
-  Scenario: user create announcement
+  @Positive @DeleteAnnouncementFromAnnouncementsPage
+  Scenario: user delete announcement from announcements page
     Given user should be logged in
     And user should see menu bar
     And user should see announcements menu on row 2
@@ -26,3 +25,11 @@ Feature: Create Announcement
     And user click on save button on edit announcement page
     Then user should be on announcements page
     And user should see toast success with message "Successfully created new announcement"
+    When user click on an announcement more button on announcements page in row number 1
+    Then user should see dropdown action of the announcement in row number 1
+    When user click on delete button on dropdown action in row number 1
+    Then user should see delete confirmation modal
+    When user click on delete button on delete confirmation modal
+    Then user should be on announcements page
+    And user should see toast success with message "Successfully delete announcement"
+
