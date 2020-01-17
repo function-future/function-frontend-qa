@@ -10,4 +10,8 @@ public class ToastComponent extends PageObject {
     return find(By.xpath("//div[@class='toasted toaster bubble error']"));
   }
 
+  public WebElementFacade toastSuccess() {
+    return find(By.xpath("//div[@class='toast is-success is-bottom']"));
+  }
+
 }
