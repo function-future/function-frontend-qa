@@ -26,4 +26,4 @@ Feature: Edit Batch
     And user type "Future Edited" in batch name input in edit batch page
     And user click on save button on edit batch page
     Then user should be on batches page
-    And user should see toast success with message "Successfully edited batch"
+    And user should see toast success with message "Successfully edit batch"
