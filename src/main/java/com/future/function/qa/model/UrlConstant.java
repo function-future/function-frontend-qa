@@ -9,6 +9,9 @@ public interface UrlConstant {
   String CREATE_ANNOUNCEMENT_URL = "http://localhost:10001/announcements/add";
   String STICKY_NOTES_URL = "http://localhost:10001/sticky-notes";
   String EDIT_STICKY_NOTES_URL = "http://localhost:10001/sticky-notes/edit";
+  String ACTIVITY_BLOGS_URL = "http://localhost:10001/activity-blogs";
+  String CREATE_ACTIVITY_BLOG_URL = "http://localhost:10001/activity-blogs/add";
+  String EDIT_ACTIVITY_BLOG_URL = "http://localhost:10001/activity-blogs/{1}/edit";
   String JUDGING_LIST_URL = "https://localhost:10001/final-judgings";
   String ADD_JUDGING_URL = "http://localhost:10001/batches/{1}/final-judging/add";
   String JUDGING_DETAIL_URL = "http://localhost:10001/batches/{1}/final-judgings/{2}/detail";
