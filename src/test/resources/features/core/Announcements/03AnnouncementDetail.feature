@@ -38,6 +38,13 @@ Feature: Announcement Detail
     And user should see announcements menu on row 2
     When user click announcements menu on row 2
     Then user should be on announcements page
+    When user click on add button on announcements page
+    Then user should be on create announcements page
+    When user type "Announcement Title" in announcement title input
+    And user type "Announcement Description" in announcement description input
+    And user click on save button on edit announcement page
+    Then user should be on announcements page
+    And user should see toast success with message "Successfully created new announcement"
     And user remembers announcement title on announcements page in row number 1
     When user click on an announcement on announcements page in row number 1
     Then user should be on announcement detail page
