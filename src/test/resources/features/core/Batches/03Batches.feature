@@ -1,4 +1,4 @@
-@Core @Batches @Regression
+@Core @Admin @Batches @BatchesPage @Regression
 Feature: Batches
 
   Background:
