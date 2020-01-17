@@ -1,4 +1,4 @@
-@Core @EditBatch @Regression
+@Core @Admin @Batches @EditBatch @Regression
 Feature: Edit Batch
 
   Background:
@@ -22,8 +22,8 @@ Feature: Edit Batch
     Then user should see batch dropdown action on row 1
     When user click on edit button on batch dropdown action in row number 1
     Then user should see edit batch page
-    When user type "future1edited" in batch code input in edit batch page
-    And user type "Future 1 Edited" in batch name input in edit batch page
+    When user type "futureEdited" in batch code input in edit batch page
+    And user type "Future Edited" in batch name input in edit batch page
     And user click on save button on edit batch page
     Then user should be on batches page
     And user should see toast success with message "Successfully edited batch"
