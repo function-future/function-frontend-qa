@@ -7,11 +7,14 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.util.*;
+
 public class CreateBatchSteps {
 
     private HomePage homePage;
     private BatchesPage batchesPage;
     private CreateBatchPage createBatchPage;
+    private String randomString = getSaltString(6);
 
     @Then("^user should be on create batch page$")
     public void userShouldBeOnCreateBatchPage() {
@@ -36,12 +39,12 @@ public class CreateBatchSteps {
 
     @When("^user type \"([^\"]*)\" in batch code input in create batch page$")
     public void userTypeStringInBatchCodeInput(String code) {
-        createBatchPage.codeInput().type(code);
+        createBatchPage.codeInput().type(code + randomString);
     }
 
     @And("^user type \"([^\"]*)\" in batch name input in create batch page$")
     public void userTypeStringInBatchBatchNameInput(String name) {
-        createBatchPage.nameInput().type(name);
+        createBatchPage.nameInput().type(name + " " + randomString);
     }
 
     @And("^user click on save button on create batch page$")
@@ -50,4 +53,14 @@ public class CreateBatchSteps {
         createBatchPage.saveButton().click();
     }
 
+    private String getSaltString(int length) {
+        String string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < length) {
+            int index = (int) (rnd.nextFloat() * string.length());
+            salt.append(string.charAt(index));
+        }
+        return salt.toString();
+    }
 }

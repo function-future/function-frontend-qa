@@ -1,5 +1,5 @@
-@Core @Courses @DeleteCourse @Regression
-Feature: Delete Course
+@Core @Admin @Courses @CreateMasterCourseAndCourse @Regression
+Feature: Create Master Course and Course
 
   Background:
     When user access function website
@@ -11,39 +11,37 @@ Feature: Delete Course
       | password | administratorfunctionapp |
     And user should be in homepage
 
-  @Positive @DeleteMasterCourseSuccess
-  Scenario: user delete master course
+  @Positive @CreateBatchForCourseSuccess
+  Scenario: user create batches for courses feature
+    Given user should be logged in
+    And user should see menu bar
+    And user should see batches menu on row 4
+    When user click batches menu on row 4
+    Then user should be on batches page
+    When user click on add button on batches page
+    Then user should be on create batch page
+    When user type "future" in batch code input in create batch page
+    And user type "Future" in batch name input in create batch page
+    And user click on save button on create batch page
+    Then user should be on batches page
+    And user should see toast success with message "Successfully created new batch"
+
+  @Positive @CreateMasterCourseSuccess
+  Scenario: user create master course
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 5
     When user click courses menu on row 5
     Then user should be on courses page
     And user should be on courses page with tab index 1
-    When user click on an course more button on tab index 1 on courses page in row number 1
-    Then user should see dropdown action of the course in tab index 1 in row number 1
-    When user click on button on index 3 on course dropdown action in row number 1 on tab index 1
-    Then user should see delete confirmation modal
-    When user click on delete button on delete confirmation modal
+    When user click on add button on courses page
+    Then user should be on create course page
+    When user type "Course Title" in course title input in create course page
+    And user type "Course Description" in course description input in create course page
+    And user click on save button on create master course page
     Then user should be on courses page
-    And user should see toast success with message "Successfully delete master course"
-
-  @Positive @DeleteCourseSuccess
-  Scenario: user delete course
-    Given user should be logged in
-    And user should see menu bar
-    And user should see courses menu on row 5
-    When user click courses menu on row 5
-    Then user should be on courses page
-    And user should see courses tab on index 2
-    When user click on courses tab on index 2
-    And user should be on courses page with tab index 2
-    When user click on an course more button on tab index 2 on courses page in row number 1
-    Then user should see dropdown action of the course in tab index 2 in row number 1
-    When user click on button on index 3 on course dropdown action in row number 1 on tab index 2
-    Then user should see delete confirmation modal
-    When user click on delete button on delete confirmation modal
-    Then user should be on courses page
-    And user should see toast success with message "Successfully delete course"
+    And user should be on courses page with tab index 1
+    And user should see toast success with message "Successfully create new master course"
 
   @Positive @ShareMasterCourse
   Scenario: user share master course to batch
