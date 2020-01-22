@@ -25,11 +25,7 @@ Feature: Activity Blogs Page
     And user should see activity blogs menu on row 3
     When user click activity blogs menu on row 3
     Then user should be on activity blogs page
-    And user prepare user request
-    And user prepare batch request
-    And user do login with email "admin@admin.com" and password "administratorfunctionapp"
-    And qa system do cleanup data for user with name "student" and email "student@student.com"
-    And user hit delete batch endpoint with recorded id
+    And system cleanup batch and student test data
 
   @Positive @StudentSuccessCreateActivityBlog
   Scenario: student create activity blog

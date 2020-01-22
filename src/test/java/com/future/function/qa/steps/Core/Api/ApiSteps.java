@@ -230,4 +230,12 @@ public class ApiSteps extends BaseSteps {
     batchAPI.prepare();
   }
 
+  @And("^system cleanup batch and student test data$")
+  public void systemCleanupTestData() throws Throwable {
+    userAPI.prepare();
+    batchAPI.prepare();
+    userDoLoginWithEmailAndPassword("admin@admin.com", "administratorfunctionapp");
+    qaSystemDoCleanupDataForUserWithNameAndEmail("student", "student@student.com");
+    userHitDeleteBatchEndpointWithRecordedId();
+  }
 }
