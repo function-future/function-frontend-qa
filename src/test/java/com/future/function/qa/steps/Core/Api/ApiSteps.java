@@ -1,10 +1,5 @@
 package com.future.function.qa.steps.Core.Api;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.isEmptyString;
-import static org.hamcrest.Matchers.notNullValue;
-
 import com.future.function.qa.api.core.auth.AuthAPI;
 import com.future.function.qa.api.core.batch.BatchAPI;
 import com.future.function.qa.api.core.user.UserAPI;
@@ -15,8 +10,8 @@ import com.future.function.qa.model.request.core.user.UserWebRequest;
 import com.future.function.qa.model.response.base.DataResponse;
 import com.future.function.qa.model.response.base.PagingResponse;
 import com.future.function.qa.model.response.core.batch.BatchWebResponse;
-import com.future.function.qa.model.response.core.resource.FileContentWebResponse;
 import com.future.function.qa.model.response.core.user.UserWebResponse;
+import com.future.function.qa.model.response.embedded.FileContentWebResponse;
 import com.future.function.qa.steps.BaseSteps;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -29,6 +24,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.isEmptyString;
+import static org.hamcrest.Matchers.notNullValue;
 
 public class ApiSteps extends BaseSteps {
 
@@ -62,7 +62,7 @@ public class ApiSteps extends BaseSteps {
 
     assertThat(authData.getResponseCode(), equalTo(200));
     assertThat(authData.getCookie()
-        .getValue(), isEmptyString());
+                 .getValue(), isEmptyString());
   }
 
   @Then("^auth response should be unauthorized$")
@@ -72,7 +72,8 @@ public class ApiSteps extends BaseSteps {
   }
 
   @When("^user do login with email \"([^\"]*)\" and password \"([^\"]*)\"$")
-  public void userDoLoginWithEmailAndPassword(String email, String password) throws Throwable {
+  public void userDoLoginWithEmailAndPassword(String email, String password)
+    throws Throwable {
 
     Response response = authAPI.login(authData.createRequest(email, password));
 
@@ -103,7 +104,7 @@ public class ApiSteps extends BaseSteps {
     Response response = authAPI.logout(authData.getCookie());
 
     authData.setResponseCode(authData.asBaseResponse(response)
-        .getCode());
+                               .getCode());
     authData.setCookie(response.getDetailedCookie(authAPI.getCookieName()));
   }
 
@@ -113,10 +114,14 @@ public class ApiSteps extends BaseSteps {
     authAPI.prepare();
   }
 
-  @When("^user hit create batch endpoint with name \"([^\"]*)\" and code \"([^\"]*)\"$")
-  public void userHitCreateBatchEndpointWithNameAndCode(String name, String code) throws Throwable {
+  @When("^user hit create batch endpoint with name \"([^\"]*)\" and code \"" +
+        "([^\"]*)\"$")
+  public void userHitCreateBatchEndpointWithNameAndCode(
+    String name, String code
+  ) throws Throwable {
 
-    Response response = batchAPI.create(batchData.createRequest(null, name, code), authData.getCookie());
+    Response response = batchAPI.create(
+      batchData.createRequest(null, name, code), authData.getCookie());
 
     batchData.setResponse(response);
   }
@@ -124,44 +129,57 @@ public class ApiSteps extends BaseSteps {
   @And("^user hit delete batch endpoint with recorded id$")
   public void userHitDeleteBatchEndpointWithRecordedId() throws Throwable {
 
-    DataResponse<BatchWebResponse> createdResponse = batchData.getSingleResponse();
+    DataResponse<BatchWebResponse> createdResponse =
+      batchData.getSingleResponse();
     BatchWebResponse createdResponseData = createdResponse.getData();
 
-    Response response = batchAPI.delete(createdResponseData.getId(), authData.getCookie());
+    Response response = batchAPI.delete(
+      createdResponseData.getId(), authData.getCookie());
 
     batchData.setResponse(response);
   }
 
-  private String getFromResourceDataOrDefault(String defaultValue) {
-
-    return Optional.of(defaultValue)
-            .filter(String::isEmpty)
-            .map(ignored -> resourceData.getCreatedResponse())
-            .map(DataResponse::getData)
-            .map(FileContentWebResponse::getId)
-            .orElse(defaultValue);
-  }
-
-  @And("^user hit create user endpoint with email \"([^\"]*)\", name \"([^\"]*)\", role \"([^\"]*)\", address \"" +
-          "([^\"]*)\", phone \"([^\"]*)\", avatar \"([^\"]*)\", batch code \"([^\"]*)\", university \"([^\"]*)\"$")
-  public void userHitCreateUserEndpointWithEmailNameRoleAddressPhoneAvatarBatchCodeUniversity(String email, String name,
-      String role, String address, String phone, String avatar, String batchCode, String university) throws Throwable {
+  @And(
+    "^user hit create user endpoint with email \"([^\"]*)\", name \"([^\"]*)" +
+    "\", role \"([^\"]*)\", address \"" +
+    "([^\"]*)\", phone \"([^\"]*)\", avatar \"([^\"]*)\", batch code \"" +
+    "([^\"]*)\", university \"([^\"]*)\"$")
+  public void userHitCreateUserEndpointWithEmailNameRoleAddressPhoneAvatarBatchCodeUniversity(
+    String email, String name, String role, String address, String phone,
+    String avatar, String batchCode, String university
+  ) throws Throwable {
 
     String requestAvatarId = Optional.of(avatar)
-        .filter("no-avatar"::equals)
-        .map(ignored -> StringUtils.EMPTY)
-        .orElseGet(() -> this.getFromResourceDataOrDefault(avatar));
+      .filter("no-avatar"::equals)
+      .map(ignored -> StringUtils.EMPTY)
+      .orElseGet(() -> this.getFromResourceDataOrDefault(avatar));
 
-    UserWebRequest request =
-            userData.createRequest(null, email, name, role, address, phone, requestAvatarId, batchCode, university);
+    UserWebRequest request = userData.createRequest(null, email, name, role,
+                                                    address, phone,
+                                                    requestAvatarId, batchCode,
+                                                    university
+    );
 
     Response response = userAPI.create(request, authData.getCookie());
 
     userData.setResponse(response);
   }
 
-  @And("^qa system do cleanup data for user with name \"([^\"]*)\" and email \"([^\"]*)\"$")
-  public void qaSystemDoCleanupDataForUserWithNameAndEmail(String name, String email) throws Throwable {
+  private String getFromResourceDataOrDefault(String defaultValue) {
+
+    return Optional.of(defaultValue)
+      .filter(String::isEmpty)
+      .map(ignored -> resourceData.getCreatedResponse())
+      .map(DataResponse::getData)
+      .map(FileContentWebResponse::getId)
+      .orElse(defaultValue);
+  }
+
+  @And("^qa system do cleanup data for user with name \"([^\"]*)\" and email " +
+       "\"([^\"]*)\"$")
+  public void qaSystemDoCleanupDataForUserWithNameAndEmail(
+    String name, String email
+  ) throws Throwable {
 
     userAPI.prepare();
     userObtainUserIdWithNameAndEmail(name, email);
@@ -169,21 +187,24 @@ public class ApiSteps extends BaseSteps {
   }
 
   @And("^user obtain user id with name \"([^\"]*)\" and email \"([^\"]*)\"$")
-  public void userObtainUserIdWithNameAndEmail(String name, String email) throws Throwable {
+  public void userObtainUserIdWithNameAndEmail(String name, String email)
+    throws Throwable {
 
-    Response getByNameResponse = userAPI.getByName(name, 1, 100, authData.getCookie());
+    Response getByNameResponse = userAPI.getByName(
+      name, 1, 100, authData.getCookie());
 
     userData.setResponse(getByNameResponse);
 
-    PagingResponse<UserWebResponse> pagingResponse = userData.getPagingResponse();
+    PagingResponse<UserWebResponse> pagingResponse =
+      userData.getPagingResponse();
     List<UserWebResponse> pagingResponseData = pagingResponse.getData();
 
     String targetUserId = pagingResponseData.stream()
-            .filter(userWebResponse -> userWebResponse.getEmail()
-                    .equals(email))
-            .map(UserWebResponse::getId)
-            .findFirst()
-            .orElse(StringUtils.EMPTY);
+      .filter(userWebResponse -> userWebResponse.getEmail()
+        .equals(email))
+      .map(UserWebResponse::getId)
+      .findFirst()
+      .orElse(StringUtils.EMPTY);
 
     userData.setTargetUserId(targetUserId);
   }
@@ -191,8 +212,22 @@ public class ApiSteps extends BaseSteps {
   @And("^user hit delete user endpoint with recorded target user id$")
   public void userHitDeleteUserEndpointWithRecordedId() throws Throwable {
 
-    Response response = userAPI.delete(userData.getTargetUserId(), authData.getCookie());
+    Response response = userAPI.delete(
+      userData.getTargetUserId(), authData.getCookie());
 
     userData.setResponse(response);
   }
+
+  @And("^user prepare user request$")
+  public void userPrepareUserRequest() throws Throwable {
+
+    userAPI.prepare();
+  }
+
+  @And("^user prepare batch request$")
+  public void userPrepareBatchRequest() throws Throwable {
+
+    batchAPI.prepare();
+  }
+
 }

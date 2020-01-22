@@ -2,11 +2,14 @@
 Feature: Activity Blogs Page
 
   Background:
-    When user do login with email "admin@admin.com" and password "administratorfunctionapp"
+    When user prepare auth request
+    And user prepare user request
+    And user prepare batch request
+    And user do login with email "admin@admin.com" and password "administratorfunctionapp"
     And user hit create batch endpoint with name "QA Batch Name" and code "BatchCodeAutomation"
-    And user hit create user endpoint with email "student@student.com", name "student", role "STUDENT", address "Address", phone "0815123123123", avatar "", batch code "BatchCodeAutomation", university "University"
+    And user hit create user endpoint with email "student@student.com", name "student", role "STUDENT", address "Address", phone "0815123123123", avatar "no-avatar", batch code "BatchCodeAutomation", university "University"
     And user hit logout endpoint
-    When user access function website
+    And user access function website
     Then user should see login bar
     When user click login button
     Then user should see login modal
@@ -22,6 +25,8 @@ Feature: Activity Blogs Page
     And user should see activity blogs menu on row 3
     When user click activity blogs menu on row 3
     Then user should be on activity blogs page
+    And user prepare user request
+    And user prepare batch request
     And user do login with email "admin@admin.com" and password "administratorfunctionapp"
     And qa system do cleanup data for user with name "student" and email "student@student.com"
     And user hit delete batch endpoint with recorded id

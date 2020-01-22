@@ -3,9 +3,13 @@ package com.future.function.qa.data.core.resource;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.future.function.qa.data.BaseData;
 import com.future.function.qa.model.response.base.DataResponse;
-import com.future.function.qa.model.response.core.resource.FileContentWebResponse;
+import com.future.function.qa.model.response.embedded.FileContentWebResponse;
 import io.restassured.response.Response;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -20,7 +24,8 @@ public class ResourceData extends BaseData {
 
   private byte[] bytes;
 
-  private DataResponse<FileContentWebResponse> createdResponse = new DataResponse<>();
+  private DataResponse<FileContentWebResponse> createdResponse =
+    new DataResponse<>();
 
   private File file;
 
@@ -36,13 +41,15 @@ public class ResourceData extends BaseData {
   public void setResponse(Response response) {
 
     super.setResponse(response);
-    this.createdResponse = asDataResponse(response, new TypeReference<DataResponse<FileContentWebResponse>>() {});
+    this.createdResponse = asDataResponse(
+      response, new TypeReference<DataResponse<FileContentWebResponse>>() {});
     this.bytes = asBytes(response);
   }
 
   private byte[] asBytes(Response response) {
 
     return response.body()
-        .asByteArray();
+      .asByteArray();
   }
+
 }
