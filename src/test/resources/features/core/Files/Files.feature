@@ -1,4 +1,4 @@
-@Core @Files @FilesPage @Regression
+@Core @Admin @Files @FilesPage @Regression
 Feature: Files page
 
   Background:

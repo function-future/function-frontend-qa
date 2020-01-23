@@ -1,4 +1,4 @@
-@Core @EditStickyNotes @Regression
+@Core @StickyNotes @EditStickyNotes @Regression
 Feature: Edit Sticky Notes
 
   Background:
@@ -14,7 +14,8 @@ Feature: Edit Sticky Notes
   @Positive @GoToEditStickyNotesAsAdmin
   Scenario: user go to edit sticky note as admin
     Given user should be logged in
-    And user should be on sticky notes detail page
+    When user click on sticky notes on feeds
+    Then user should be on sticky notes detail page
     When user click on edit button
     Then user should be on edit sticky notes page
 
