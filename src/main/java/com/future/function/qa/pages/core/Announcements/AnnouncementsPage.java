@@ -14,15 +14,15 @@ public class AnnouncementsPage extends MenuPage {
   }
 
   public WebElementFacade findAnnouncement(int row) {
-    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]", row)));
+    return find(By.xpath(String.format("(//div[@class='list-wrapper'])[%s]", row)));
   }
 
   public WebElementFacade findAnnouncementTitle(int row) {
-    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[1]/div[1]/div[1]", row)));
+    return find(By.xpath(String.format("(//div[@class='list-wrapper'])[%s]//div[contains(@class, 'list-container__content-header-title')]", row)));
   }
 
   public WebElementFacade findAnnouncementMoreButton(int row) {
-    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[%s]/div[1]/div[2]/div[1]/div[1]/button[1]", row)));
+    return find(By.xpath(String.format("(//div[@class='list-wrapper'])[%s]//div[contains(@class, 'list-container__actions')]/div/div/button", row)));
   }
 
   public WebElementFacade findAnnouncementActionDropdown(int row) {
