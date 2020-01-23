@@ -15,6 +15,11 @@ public abstract class MenuPage extends BasePage {
     return find(By.xpath(String.format("//body//li[%s]", menuIndex)));
   }
 
+  public WebElementFacade gradesMenu(int menuIndex) {
+
+    return find(By.xpath(String.format("//body//li[%s]", menuIndex)));
+  }
+
   public WebElementFacade navBar() {
 
     return find(By.xpath("//nav[@class='navbar is-primary is-spaced is-navbar is-hidden-mobile is-hidden-touch']"));
