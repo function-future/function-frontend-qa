@@ -1,7 +1,7 @@
 package com.future.function.qa.steps.Scoring.Landing;
 
 import com.future.function.qa.pages.core.HomePage;
-import com.future.function.qa.pages.scoring.GradesPage;
+import com.future.function.qa.pages.scoring.Landing.GradesPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

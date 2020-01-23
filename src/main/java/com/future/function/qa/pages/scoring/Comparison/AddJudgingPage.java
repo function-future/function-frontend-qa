@@ -1,4 +1,4 @@
-package com.future.function.qa.pages.scoring;
+package com.future.function.qa.pages.scoring.Comparison;
 
 import com.future.function.qa.model.UrlConstant;
 import com.future.function.qa.pages.base.MenuPage;

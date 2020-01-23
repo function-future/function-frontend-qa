@@ -1,7 +1,7 @@
 package com.future.function.qa.steps.Scoring.Comparison;
 
 import com.future.function.qa.pages.core.HomePage;
-import com.future.function.qa.pages.scoring.JudgingListPage;
+import com.future.function.qa.pages.scoring.Comparison.JudgingListPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
