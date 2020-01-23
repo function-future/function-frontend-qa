@@ -1,4 +1,4 @@
-@QuestionBankList @Regression
+@GradesItemList @Regression
 Feature: QuestionBankList
 
   Background:
