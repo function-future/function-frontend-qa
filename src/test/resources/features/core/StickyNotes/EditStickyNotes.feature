@@ -1,4 +1,4 @@
-@Core @StickyNotes @EditStickyNotes @Regression
+@Core @Admin @StickyNotes @EditStickyNotes @Regression
 Feature: Edit Sticky Notes
 
   Background:

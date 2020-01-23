@@ -1,4 +1,4 @@
-@Core @Courses @StudentCourse @Regression
+@Core @Student @Courses @StudentCourse @Regression
 Feature: Delete Course with role as Student
 
   Background:

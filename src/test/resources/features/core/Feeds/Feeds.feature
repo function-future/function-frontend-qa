@@ -1,4 +1,4 @@
-@Core @Feeds @Regression
+@Core @Admin @Feeds @Regression
 Feature: Feeds
 
   Background:

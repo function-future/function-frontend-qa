@@ -1,4 +1,4 @@
-@Core @Announcements @AnnouncementsPage @Regression
+@Core @Admin @Announcements @AnnouncementsPage @Regression
 Feature: Announcements
 
   Background:

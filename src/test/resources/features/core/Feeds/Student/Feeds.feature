@@ -1,4 +1,4 @@
-@Core @Feeds @Regression
+@Core @Student @Feeds @Regression
 Feature: Feeds with role as Student
 
   Background:
