@@ -171,6 +171,26 @@ Feature: Course with role as Mentor
     And user should see courses menu on row 4
     When user click courses menu on row 4
     Then user should be on courses page
+    And user should be on courses page with tab index 1
+    When user click on add button on courses page
+    Then user should be on create course page
+    When user type "Course Title" in course title input in create course page
+    And user type "Course Description" in course description input in create course page
+    And user click on save button on create master course page
+    Then user should be on courses page
+    And user should be on courses page with tab index 1
+    And user should see toast success with message "Successfully create new master course"
+    Then user should be on courses page
+    And user should be on courses page with tab index 1
+    When user click on an course more button on tab index 1 on courses page in row number 1
+    Then user should see dropdown action of the course in tab index 1 in row number 1
+    When user click on button on index 2 on course dropdown action in row number 1 on tab index 1
+    Then user should see share course modal
+    When user click on batch on share course modal on row 1
+    Then batch radio button on row 1 should be selected
+    When user click on share button on share course modal
+    Then user should see toast success with message "Successfully share course"
+    Then user should be on courses page
     And user should see courses tab on index 2
     When user click on courses tab on index 2
     And user should be on courses page with tab index 2
@@ -188,6 +208,16 @@ Feature: Course with role as Mentor
     And user should see menu bar
     And user should see courses menu on row 4
     When user click courses menu on row 4
+    Then user should be on courses page
+    And user should be on courses page with tab index 1
+    When user click on add button on courses page
+    Then user should be on create course page
+    When user type "Course Title" in course title input in create course page
+    And user type "Course Description" in course description input in create course page
+    And user click on save button on create master course page
+    Then user should be on courses page
+    And user should be on courses page with tab index 1
+    And user should see toast success with message "Successfully create new master course"
     Then user should be on courses page
     And user should be on courses page with tab index 1
     When user click on an course more button on tab index 1 on courses page in row number 1
