@@ -1,4 +1,4 @@
-@Core @Admin @Users @UsersPage @Regression
+@Core @Users @UsersPage @Regression
 Feature: Users page
 
   Background:
