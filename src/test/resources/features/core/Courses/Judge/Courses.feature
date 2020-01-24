@@ -1,5 +1,5 @@
-@Core @Courses @Mentor @MentorCourse @Regression
-Feature: Course with role as Mentor
+@Core @Courses @Judge @JudgeCourse @Regression
+Feature: Course with role as Judge
 
   Background:
     When user access function website
@@ -7,12 +7,12 @@ Feature: Course with role as Mentor
     When user click login button
     Then user should see login modal
     When user login with these credentials
-      | email    | mentor@mentor.com |
-      | password | mentorfunctionapp |
+      | email    | judge@judge.com  |
+      | password | judgefunctionapp  |
     And user should be in homepage
 
-  @Positive @MentorAbleToVisitCoursesPage
-  Scenario: user visit courses page
+  @Positive @JudgeAbleToVisitCoursesPage
+  Scenario: judge visit courses page
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -20,8 +20,8 @@ Feature: Course with role as Mentor
     Then user should be on courses page
     And user should be on courses page with tab index 1
 
-  @Positive @MentorCreateMasterCourseSuccess
-  Scenario: user create master course
+  @Positive @JudgeCreateMasterCourseSuccess
+  Scenario: judge create master course
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -37,8 +37,8 @@ Feature: Course with role as Mentor
     And user should be on courses page with tab index 1
     And user should see toast success with message "Successfully create new master course"
 
-  @Positive @MentorGoToMasterCourseDetail
-  Scenario: user go to master course detail
+  @Positive @JudgeGoToMasterCourseDetail
+  Scenario: judge go to master course detail
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -50,8 +50,8 @@ Feature: Course with role as Mentor
     Then user should be in master course detail page
     And course title on master course detail page should be the same
 
-  @Positive @MentorShareMasterCourse
-  Scenario: user share master course to batch
+  @Positive @JudgeShareMasterCourse
+  Scenario: judge share master course to batch
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -68,8 +68,8 @@ Feature: Course with role as Mentor
     Then user should see toast success with message "Successfully share course"
     And user should be on courses page
 
-  @Positive @MentorShareCourse
-  Scenario: user share course to batch
+  @Positive @JudgeShareCourse
+  Scenario: judge share course to batch
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -88,8 +88,8 @@ Feature: Course with role as Mentor
     Then user should see toast success with message "Successfully share course"
     And user should be on courses page
 
-  @Positive @MentorGoToCourseDetail
-  Scenario: user go to course detail
+  @Positive @JudgeGoToCourseDetail
+  Scenario: judge go to course detail
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -104,8 +104,8 @@ Feature: Course with role as Mentor
     And course title on course detail page should be the same
     And user should see discussion section on course detail page
 
-  @Positive @MentorAddDiscussionToCourse
-  Scenario: user visit course detail and add discussion
+  @Positive @JudgeAddDiscussionToCourse
+  Scenario: judge visit course detail and add discussion
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -124,8 +124,8 @@ Feature: Course with role as Mentor
     And user should see toast success with message "Successfully added course discussion"
     And user should see "Let's discuss something" discussion that was posted by user
 
-  @Positive @MentorEditMasterCourseFromCoursesPageSuccess
-  Scenario: user edit master course
+  @Positive @JudgeEditMasterCourseFromCoursesPageSuccess
+  Scenario: judge edit master course
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -143,8 +143,8 @@ Feature: Course with role as Mentor
     And user should be on courses page with tab index 1
     And user should see toast success with message "Successfully edit master course"
 
-  @Positive @MentorEditCourseFromCoursesPageSuccess
-  Scenario: user edit course
+  @Positive @JudgeEditCourseFromCoursesPageSuccess
+  Scenario: judge edit course
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -164,8 +164,8 @@ Feature: Course with role as Mentor
     And user should be on courses page with tab index 2
     And user should see toast success with message "Successfully edit course"
 
-  @Positive @MentorDeleteCourseSuccess
-  Scenario: user delete course
+  @Positive @JudgeDeleteCourseSuccess
+  Scenario: judge delete course
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -202,8 +202,8 @@ Feature: Course with role as Mentor
     Then user should be on courses page
     And user should see toast success with message "Successfully delete course"
 
-  @Positive @MentorDeleteMasterCourseSuccess
-  Scenario: user delete master course
+  @Positive @JudgeDeleteMasterCourseSuccess
+  Scenario: judge delete master course
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -228,9 +228,8 @@ Feature: Course with role as Mentor
     Then user should be on courses page
     And user should see toast success with message "Successfully delete master course"
 
-
-  @Positive @MentorDeleteMasterCourseFromCourseDetailSuccess
-  Scenario: user delete master course from course detail
+  @Positive @JudgeDeleteMasterCourseFromCourseDetailSuccess
+  Scenario: judge delete master course from course detail
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
@@ -247,8 +246,8 @@ Feature: Course with role as Mentor
     Then user should be on courses page
     And user should see toast success with message "Successfully delete course"
 
-  @Positive @MentorDeleteCourseFromCourseDetailSuccess
-  Scenario: user delete course from course detail
+  @Positive @JudgeDeleteCourseFromCourseDetailSuccess
+  Scenario: judge delete course from course detail
     Given user should be logged in
     And user should see menu bar
     And user should see courses menu on row 4
