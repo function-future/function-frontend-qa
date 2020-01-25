@@ -6,6 +6,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import static org.junit.Assert.assertTrue;
+
 public class GradesSteps {
 
     private GradesPage gradesPage;
@@ -14,17 +16,17 @@ public class GradesSteps {
 
     @And("^user should not see grades menu with index (\\d+)$")
     public void userShouldNotSeeGradesMenu(int menuIndex) {
-        homePage.gradesMenu(menuIndex).shouldNotBePresent();
+        homePage.findMenuWithIndex(menuIndex).shouldNotBePresent();
     }
 
     @When("^user should see grades menu with index (\\d+)$")
     public void userSeeGradesMenu(int menuIndex) {
-        homePage.gradesMenu(menuIndex).shouldBeVisible();
+        homePage.findMenuWithIndex(menuIndex).shouldBeVisible();
     }
 
     @When("^user click grades menu with index (\\d+)$")
     public void userClickGradesMenu(int menuIndex) {
-        homePage.gradesMenu(menuIndex).click();
+        homePage.findMenuWithIndex(menuIndex).click();
     }
 
     @Then("^user should be in grades page$")
@@ -45,6 +47,7 @@ public class GradesSteps {
     @Then("^user should see grades tab list item with index (\\d+) in grades menu$")
     public void userShouldSeeGradesTabListItemWithIndexInGradesMenu(int tabIdx) {
         gradesPage.gradesTabItemContent(tabIdx).shouldBeVisible();
+        assertTrue(gradesPage.gradesTabItem(tabIdx).getAttribute("class").contains("is-active"));
     }
 
     @And("^user should see tab (\\d+) content with index (\\d+)$")

@@ -14,7 +14,7 @@ public class GradesPage extends MenuPage {
     }
 
     public WebElementFacade gradesTabItem(int tabIdx) {
-        return find(By.xpath(String.format("//div[@class='main-content']//li[%s]//a[1]", tabIdx + 1)));
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/section[1]/div[1]/nav[1]/ul[1]/li[%s]", tabIdx + 1)));
     }
 
     public WebElementFacade gradesTabItemContent(int tabIdx) {
