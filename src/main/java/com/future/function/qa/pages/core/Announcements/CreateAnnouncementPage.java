@@ -21,4 +21,12 @@ public class CreateAnnouncementPage extends MenuPage {
     return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/button[2]"));
   }
 
+  public WebElementFacade titleInputError() {
+    return find(By.xpath("//span[contains(text(),'The title field is required.')]"));
+  }
+
+  public WebElementFacade descriptionInputError() {
+    return find(By.xpath("//span[contains(text(),'The description field is required.')]"));
+  }
+
 }

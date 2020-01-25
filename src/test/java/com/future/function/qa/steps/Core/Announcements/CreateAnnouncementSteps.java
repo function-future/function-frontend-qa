@@ -31,4 +31,13 @@ public class CreateAnnouncementSteps {
     createAnnouncementPage.saveButton().click();
   }
 
+  @Then("^user should see error message in announcement title input$")
+  public void userShouldSeeErrorMessageInAnnouncementTitleInput() {
+    createAnnouncementPage.titleInputError().shouldBeVisible();
+  }
+
+  @Then("^user should see error message in announcement description input$")
+  public void userShouldSeeErrorMessageInAnnouncementDescriptionInput() {
+    createAnnouncementPage.descriptionInputError().shouldBeVisible();
+  }
 }
