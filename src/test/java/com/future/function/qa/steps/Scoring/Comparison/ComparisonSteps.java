@@ -1,8 +1,7 @@
 package com.future.function.qa.steps.Scoring.Comparison;
 
-import com.future.function.qa.pages.scoring.JudgingDetailPage;
-import com.future.function.qa.pages.scoring.JudgingListPage;
-import cucumber.api.PendingException;
+import com.future.function.qa.pages.scoring.Comparison.JudgingDetailPage;
+import com.future.function.qa.pages.scoring.Comparison.JudgingListPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

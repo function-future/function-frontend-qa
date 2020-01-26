@@ -1,12 +1,11 @@
 package com.future.function.qa.steps.Scoring.Comparison;
 
-import com.future.function.qa.pages.scoring.JudgingDetailPage;
-import com.future.function.qa.pages.scoring.JudgingListPage;
+import com.future.function.qa.pages.scoring.Comparison.JudgingDetailPage;
+import com.future.function.qa.pages.scoring.Comparison.JudgingListPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,11 +1,9 @@
 package com.future.function.qa.steps.Scoring.Comparison;
 
-import com.future.function.qa.pages.core.HomePage;
 import com.future.function.qa.pages.errors.general.ToastComponent;
 import com.future.function.qa.pages.errors.scoring.AddJudgingPageErrors;
-import com.future.function.qa.pages.scoring.AddJudgingPage;
-import com.future.function.qa.pages.scoring.JudgingListPage;
-import cucumber.api.PendingException;
+import com.future.function.qa.pages.scoring.Comparison.AddJudgingPage;
+import com.future.function.qa.pages.scoring.Comparison.JudgingListPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
