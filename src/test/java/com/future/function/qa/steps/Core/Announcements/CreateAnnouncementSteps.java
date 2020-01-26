@@ -18,11 +18,13 @@ public class CreateAnnouncementSteps {
 
   @When("^user type \"([^\"]*)\" in announcement title input$")
   public void userTypeInAnnouncementTitleInput(String title) {
+    createAnnouncementPage.titleInput().clear();
     createAnnouncementPage.titleInput().type(title);
   }
 
   @And("^user type \"([^\"]*)\" in announcement description input$")
   public void userTypeInAnnouncementDescriptionInput(String title) {
+    createAnnouncementPage.descriptionInput().clear();
     createAnnouncementPage.descriptionInput().type(title);
   }
 
