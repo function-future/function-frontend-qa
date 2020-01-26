@@ -21,4 +21,11 @@ public class CreateCoursePage extends MenuPage {
     return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[4]/div[1]/button[2]"));
   }
 
+  public WebElementFacade titleInputErrorMessage() {
+    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]"));
+  }
+
+  public WebElementFacade descriptionInputErrorMessage() {
+    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/span[1]"));
+  }
 }

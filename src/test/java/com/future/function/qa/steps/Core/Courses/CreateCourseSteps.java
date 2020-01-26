@@ -46,4 +46,14 @@ public class CreateCourseSteps {
     }
     return salt.toString();
   }
+
+  @Then("^user should see error message in course title input$")
+  public void userShouldSeeErrorMessageInCourseTitleInput() {
+    createCoursePage.titleInputErrorMessage().shouldBeVisible();
+  }
+
+  @Then("^user should see error message in course description input$")
+  public void userShouldSeeErrorMessageInCourseDescriptionInput() {
+    createCoursePage.descriptionInputErrorMessage().shouldBeVisible();
+  }
 }

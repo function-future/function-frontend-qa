@@ -80,3 +80,49 @@ Feature: Create Master Course and Course
     When user click on share button on share course modal
     Then user should see toast success with message "Successfully share course"
     And user should be on courses page
+
+  @Negative @CreateMasterCourseEmptyTitle
+  Scenario: user create master course with empty title
+    Given user should be logged in
+    And user should see menu bar
+    And user should see courses menu on row 5
+    When user click courses menu on row 5
+    Then user should be on courses page
+    And user should be on courses page with tab index 1
+    When user click on add button on courses page
+    Then user should be on create course page
+    When user type " " in course title input in create course page
+    And user type "Course Description" in course description input in create course page
+    And user click on save button on create master course page
+    Then user should see error message in course title input
+
+  @Negative @CreateMasterCourseEmptyDescription
+  Scenario: user create master course with empty description
+    Given user should be logged in
+    And user should see menu bar
+    And user should see courses menu on row 5
+    When user click courses menu on row 5
+    Then user should be on courses page
+    And user should be on courses page with tab index 1
+    When user click on add button on courses page
+    Then user should be on create course page
+    When user type "Course Title" in course title input in create course page
+    And user type "" in course description input in create course page
+    And user click on save button on create master course page
+    Then user should see error message in course description input
+
+  @Negative @CreateMasterCourseEmptyTitleAndDescription
+  Scenario: user create master course with empty title and description
+    Given user should be logged in
+    And user should see menu bar
+    And user should see courses menu on row 5
+    When user click courses menu on row 5
+    Then user should be on courses page
+    And user should be on courses page with tab index 1
+    When user click on add button on courses page
+    Then user should be on create course page
+    When user type " " in course title input in create course page
+    And user type "" in course description input in create course page
+    And user click on save button on create master course page
+    Then user should see error message in course title input
+    Then user should see error message in course description input
