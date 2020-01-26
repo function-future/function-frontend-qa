@@ -129,8 +129,71 @@ Feature: Create student, mentor, judge, admin
     And role select box should not be visible
     And user click on save button on create user page
     Then user should see error message in name input
-    Then user should see error message in phone input
-    Then user should see error message in email input
-    Then user should see error message in university input
-    Then user should see error message in address input
-    Then user should see error message in batch input
+    And user should see error message in phone input
+    And user should see error message in email input
+    And user should see error message in university input
+    And user should see error message in address input
+    And user should see error message in batch input
+
+  @Negative @CreateAdminWithAllFieldEmpty
+  Scenario: user add admin with all field empty
+    Given user should be logged in
+    And user should see menu bar
+    And user should see users menu on row 6
+    When user click users menu on row 6
+    Then user should be on users page with tab index 1
+    And user should see "Admins" tab on index 2
+    When user click tab on index 2
+    And user should be on users page with tab index 2
+    When user click on add button on users page on tab index 2
+    Then user should be on create user page
+    And role select box should be visible
+    And batch select box should not be visible
+    And role selected on create user page should be "Admin"
+    And user click on save button on create user page
+    Then user should see error message in name input
+    And user should see error message in phone input
+    And user should see error message in email input
+    And user should see error message in address input
+
+  @Negative @CreateMentorWithAllFieldEmpty
+  Scenario: user add mentor with all field empty
+    Given user should be logged in
+    And user should see menu bar
+    And user should see users menu on row 6
+    When user click users menu on row 6
+    Then user should be on users page with tab index 1
+    And user should see "Mentors" tab on index 3
+    When user click tab on index 3
+    And user should be on users page with tab index 3
+    When user click on add button on users page on tab index 3
+    Then user should be on create user page
+    And role select box should be visible
+    And batch select box should not be visible
+    And role selected on create user page should be "Mentor"
+    And user click on save button on create user page
+    Then user should see error message in name input
+    And user should see error message in phone input
+    And user should see error message in email input
+    And user should see error message in address input
+
+  @Negative @CreateJudgeWithAllFieldEmpty
+  Scenario: user add judge with all field empty
+    Given user should be logged in
+    And user should see menu bar
+    And user should see users menu on row 6
+    When user click users menu on row 6
+    Then user should be on users page with tab index 1
+    And user should see "Judges" tab on index 4
+    When user click tab on index 4
+    And user should be on users page with tab index 4
+    When user click on add button on users page on tab index 4
+    Then user should be on create user page
+    And role select box should be visible
+    And batch select box should not be visible
+    And role selected on create user page should be "Judge"
+    And user click on save button on create user page
+    Then user should see error message in name input
+    And user should see error message in phone input
+    And user should see error message in email input
+    And user should see error message in address input
