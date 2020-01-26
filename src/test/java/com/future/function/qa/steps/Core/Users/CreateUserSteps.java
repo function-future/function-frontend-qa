@@ -89,4 +89,33 @@ public class CreateUserSteps {
         return salt.toString();
     }
 
+    @Then("^user should see error message in name input$")
+    public void userShouldSeeErrorMessageInNameInput() {
+        createUserPage.nameInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see error message in phone input$")
+    public void userShouldSeeErrorMessageInPhoneInput() {
+        createUserPage.phoneInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see error message in email input$")
+    public void userShouldSeeErrorMessageInEmailInput() {
+        createUserPage.emailInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see error message in university input$")
+    public void userShouldSeeErrorMessageInUniversityInput() {
+        createUserPage.universityInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see error message in address input$")
+    public void userShouldSeeErrorMessageInAddressInput() {
+        createUserPage.addressInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see error message in batch input$")
+    public void userShouldSeeErrorMessageInBatchInput() {
+        createUserPage.batchSelectInputErrorMessage().shouldBeVisible();
+    }
 }

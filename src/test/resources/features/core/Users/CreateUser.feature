@@ -115,3 +115,22 @@ Feature: Create student, mentor, judge, admin
     And user click on save button on create user page
     Then user should be on users page with tab index 1
     And user should see toast success with message "Successfully created new user"
+
+  @Negative @CreateStudentWithAllFieldEmpty
+  Scenario: user add student with all field empty
+    Given user should be logged in
+    And user should see menu bar
+    And user should see users menu on row 6
+    When user click users menu on row 6
+    Then user should be on users page with tab index 1
+    When user click on add button on users page on tab index 1
+    Then user should be on create user page
+    And batch select box should be visible
+    And role select box should not be visible
+    And user click on save button on create user page
+    Then user should see error message in name input
+    Then user should see error message in phone input
+    Then user should see error message in email input
+    Then user should see error message in university input
+    Then user should see error message in address input
+    Then user should see error message in batch input
