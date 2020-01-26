@@ -66,4 +66,13 @@ public class EditStickyNotesSteps {
         editStickyNotesPage.cancelButton().click();
     }
 
+    @Then("^user should see error message in sticky notes title input$")
+    public void userShouldSeeErrorMessageInStickyNotesTitleInput() {
+        editStickyNotesPage.titleInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see error message in sticky notes description input$")
+    public void userShouldSeeErrorMessageInStickyNotesDescriptionInput() {
+        editStickyNotesPage.descriptionInputErrorMessage().shouldBeVisible();
+    }
 }
