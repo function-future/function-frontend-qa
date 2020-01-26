@@ -2,6 +2,7 @@ package com.future.function.qa.steps.Scoring.Landing;
 
 import com.future.function.qa.pages.core.HomePage;
 import com.future.function.qa.pages.scoring.Landing.GradesPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -47,7 +48,6 @@ public class GradesSteps {
     @Then("^user should see grades tab list item with index (\\d+) in grades menu$")
     public void userShouldSeeGradesTabListItemWithIndexInGradesMenu(int tabIdx) {
         gradesPage.gradesTabItemContent(tabIdx).shouldBeVisible();
-        assertTrue(gradesPage.gradesTabItem(tabIdx).getAttribute("class").contains("is-active"));
     }
 
     @And("^user should see tab (\\d+) content with index (\\d+)$")
@@ -88,5 +88,10 @@ public class GradesSteps {
     @And("^user should not see batch selection dropdown on tab (\\d+)$")
     public void userShouldNotSeeBatchSelectionDropdownOnTab(int tabIdx) {
         gradesPage.findSelectBatchDropdown(tabIdx).shouldNotBeVisible();
+    }
+
+    @And("^user should see grades tab list on index (\\d+) having \"([^\"]*)\" attribute with \"([^\"]*)\"$")
+    public void userShouldSeeGradesTabListOnIndexHavingAttributeWith(int tabIdx, String attr, String attrValue) {
+        assertTrue(gradesPage.gradesTabItem(tabIdx).getAttribute(attr).contains(attrValue));
     }
 }

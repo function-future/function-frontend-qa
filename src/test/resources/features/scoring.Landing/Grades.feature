@@ -28,11 +28,12 @@ Feature: QuestionBankList
     When user click grades menu with index 8
     Then user should be in grades page
     Then user should see grades tab list item with index 0 in grades menu
+    And user should see grades tab list on index 0 having "class" attribute with "is-active"
     And user should see add button on tab 0
     And user should see action dropdown button on tab 0 item with index 0
 
   @Positive @AccessingQuizListAsAdmin
-  Scenario: Accessing Question Bank List as Admin
+  Scenario: Accessing Quiz List as Admin
     Given user should be logged in
     And user should see menu bar
     And user should see grades menu with index 8
@@ -41,6 +42,7 @@ Feature: QuestionBankList
     And user should see grades tabs
     And user clicks on the grades tab with index 1
     Then user should see grades tab list item with index 1 in grades menu
+    And user should see grades tab list on index 1 having "class" attribute with "is-active"
     And user should see tab 1 content with index 0
     And user should see add button on tab 1
     And user should see action dropdown button on tab 1 item with index 0
@@ -57,6 +59,7 @@ Feature: QuestionBankList
       And user should see grades tabs
       And user clicks on the grades tab with index 2
       Then user should see grades tab list item with index 2 in grades menu
+      And user should see grades tab list on index 2 having "class" attribute with "is-active"
       And user should see tab 2 content with index 0
       And user should see add button on tab 2
       And user should see action dropdown button on tab 2 item with index 0
@@ -83,6 +86,7 @@ Feature: QuestionBankList
     Then user should be in grades page
     And user should see grades tabs
     Then user should see grades tab list item with index 0 in grades menu
+    And user should see grades tab list on index 0 having "class" attribute with "is-active"
     And user should see tab 0 content with index 0
     And user should not see add button on tab 0
     And user should not see action dropdown button on tab 0 item with index 0
@@ -109,6 +113,7 @@ Feature: QuestionBankList
     Then user should be in grades page
     And user should see grades tabs
     Then user should see grades tab list item with index 0 in grades menu
+    And user should see grades tab list on index 0 having "class" attribute with "is-active"
     And user should see tab 0 content with index 0
     And user should not see add button on tab 0
     And user should not see action dropdown button on tab 0 item with index 0
@@ -135,6 +140,7 @@ Feature: QuestionBankList
     Then user should be in grades page
     And user should see grades tabs
     Then user should see grades tab list item with index 0 in grades menu
+    And user should see grades tab list on index 0 having "class" attribute with "is-active"
     And user should see tab 0 content with index 0
     And user should not see add button on tab 0
     And user should not see action dropdown button on tab 0 item with index 0
@@ -161,6 +167,7 @@ Feature: QuestionBankList
     And user should see grades tabs
     And user clicks on the grades tab with index 1
     Then user should see grades tab list item with index 1 in grades menu
+    And user should see grades tab list on index 1 having "class" attribute with "is-active"
     And user should see tab 1 content with index 0
     And user should not see add button on tab 1
     And user should not see action dropdown button on tab 1 item with index 0
