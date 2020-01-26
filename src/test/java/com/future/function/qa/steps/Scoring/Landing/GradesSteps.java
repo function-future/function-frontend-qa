@@ -94,4 +94,14 @@ public class GradesSteps {
     public void userShouldSeeGradesTabListOnIndexHavingAttributeWith(int tabIdx, String attr, String attrValue) {
         assertTrue(gradesPage.gradesTabItem(tabIdx).getAttribute(attr).contains(attrValue));
     }
+
+    @When("^user click add button on tab with index (\\d+)$")
+    public void userClickAddButtonOnTabWithIndex(int tabIdx) {
+        gradesPage.addGradesItemBtn(tabIdx).click();
+    }
+
+    @And("^user should click item number (\\d+) on grades page tab number (\\d+)$")
+    public void userShouldClickItemNumberOnGradesPageTabNumber(int row, int tabIdx) {
+        gradesPage.gradesTabItemContentData(tabIdx, row).click();
+    }
 }
