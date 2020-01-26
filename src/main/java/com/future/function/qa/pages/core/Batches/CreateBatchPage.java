@@ -21,4 +21,12 @@ public class CreateBatchPage extends MenuPage {
     return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[2]"));
   }
 
+  public WebElementFacade codeInputErrorMessage() {
+    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]"));
+  }
+
+  public WebElementFacade nameInputErrorMessage() {
+    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]"));
+  }
+
 }
