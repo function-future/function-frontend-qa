@@ -70,7 +70,7 @@ Feature: Edit Announcement
     When user click on edit button on announcement detail page
     Then user should be on edit announcement page
     And user should see title on edit announcements page is the same
-    When user type "" in announcement title input
+    When user type " " in announcement title input
     And user type "Announcement Description 1" in announcement description input
     And user click on save button on edit announcement page
     Then user should see error message in announcement title input
