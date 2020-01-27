@@ -26,10 +26,10 @@ public class EditStickyNotesPage extends MenuPage {
     }
 
     public WebElementFacade titleInputErrorMessage() {
-        return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[1]"));
+        return find(By.xpath("//span[contains(text(),'The title field is required.')]"));
     }
 
     public WebElementFacade descriptionInputErrorMessage() {
-        return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[4]/span[1]"));
+        return find(By.xpath("//span[contains(text(),'The description field is required.')]"));
     }
 }

@@ -64,7 +64,7 @@ Feature: Create Batch
     When user type "future 1" in batch code input in create batch page
     And user type "Future" in batch name input in create batch page
     And user click on save button on create batch page
-    Then user should see batch code input error message
+    Then user should see batch code input has space error message
 
   @Negative @CreateBatchEmptyName
   Scenario: user create batches with empty name

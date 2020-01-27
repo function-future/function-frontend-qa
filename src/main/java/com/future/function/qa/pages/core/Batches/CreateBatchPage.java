@@ -22,11 +22,14 @@ public class CreateBatchPage extends MenuPage {
   }
 
   public WebElementFacade codeInputErrorMessage() {
-    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]"));
+    return find(By.xpath("//span[contains(text(),'The code field is required.')]"));
   }
 
   public WebElementFacade nameInputErrorMessage() {
-    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]"));
+    return find(By.xpath("//span[contains(text(),'The name field is required.')]"));
   }
 
+  public WebElementFacade codeInputOnlyAlphanumericErrorMessage() {
+    return find(By.xpath("//span[contains(text(),'The code field may only contain alpha-numeric char')]"));
+  }
 }

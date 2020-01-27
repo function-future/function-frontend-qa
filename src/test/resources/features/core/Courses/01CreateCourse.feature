@@ -91,7 +91,7 @@ Feature: Create Master Course and Course
     And user should be on courses page with tab index 1
     When user click on add button on courses page
     Then user should be on create course page
-    When user type " " in course title input in create course page
+    When user type "" in course title input in create course page
     And user type "Course Description" in course description input in create course page
     And user click on save button on create master course page
     Then user should see error message in course title input
@@ -121,7 +121,7 @@ Feature: Create Master Course and Course
     And user should be on courses page with tab index 1
     When user click on add button on courses page
     Then user should be on create course page
-    When user type " " in course title input in create course page
+    When user type "" in course title input in create course page
     And user type "" in course description input in create course page
     And user click on save button on create master course page
     Then user should see error message in course title input

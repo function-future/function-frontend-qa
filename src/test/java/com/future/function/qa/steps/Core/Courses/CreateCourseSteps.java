@@ -23,12 +23,20 @@ public class CreateCourseSteps {
 
   @When("^user type \"([^\"]*)\" in course title input in create course page$")
   public void userTypeStringInCourseTitleInputInCreateCoursePage(String title) {
-    createCoursePage.titleInput().type(title + " " + randomString);
+    String text = "";
+    if(title.length() != 0) {
+      text = title + " " + randomString;
+    }
+    createCoursePage.titleInput().type(text);
   }
 
   @When("^user type \"([^\"]*)\" in course description input in create course page$")
   public void userTypeStringInCourseDescriptionInputInCreateCoursePage(String title) {
-    createCoursePage.descriptionInput().type(title + " " + randomString);
+    String text = "";
+    if(title.length() != 0) {
+      text = title + " " + randomString;
+    }
+    createCoursePage.descriptionInput().type(text);
   }
 
   @And("^user click on save button on create master course page$")

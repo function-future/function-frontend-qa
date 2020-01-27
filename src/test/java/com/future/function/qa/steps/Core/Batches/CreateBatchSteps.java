@@ -73,4 +73,9 @@ public class CreateBatchSteps {
     public void userShouldSeeBatchNameInputErrorMessage() {
         createBatchPage.nameInputErrorMessage().shouldBeVisible();
     }
+
+    @Then("^user should see batch code input has space error message$")
+    public void userShouldSeeBatchCodeInputHasSpaceErrorMessage() {
+        createBatchPage.codeInputOnlyAlphanumericErrorMessage().shouldBeVisible();
+    }
 }
