@@ -24,4 +24,12 @@ public class EditStickyNotesPage extends MenuPage {
     public WebElementFacade cancelButton() {
         return find(By.xpath("//button[@class='button is-light']"));
     }
+
+    public WebElementFacade titleInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The title field is required.')]"));
+    }
+
+    public WebElementFacade descriptionInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The description field is required.')]"));
+    }
 }

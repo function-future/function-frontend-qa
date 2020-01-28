@@ -37,4 +37,28 @@ public class CreateUserPage extends MenuPage {
     public WebElementFacade saveButton() {
         return find(By.xpath("//div[@class='buttons']/button[2]"));
     }
+
+    public WebElementFacade nameInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The name field is required.')]"));
+    }
+
+    public WebElementFacade phoneInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The phone field is required.')]"));
+    }
+
+    public WebElementFacade emailInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The email field is required.')]"));
+    }
+
+    public WebElementFacade universityInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The university field is required.')]"));
+    }
+
+    public WebElementFacade addressInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The address field is required.')]"));
+    }
+
+    public WebElementFacade batchSelectInputErrorMessage() {
+        return find(By.xpath("//span[contains(text(),'The batch field is required.')]"));
+    }
 }

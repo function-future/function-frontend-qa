@@ -63,4 +63,19 @@ public class CreateBatchSteps {
         }
         return salt.toString();
     }
+
+    @Then("^user should see batch code input error message$")
+    public void userShouldSeeBatchCodeInputErrorMessage() {
+        createBatchPage.codeInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see batch name input error message$")
+    public void userShouldSeeBatchNameInputErrorMessage() {
+        createBatchPage.nameInputErrorMessage().shouldBeVisible();
+    }
+
+    @Then("^user should see batch code input has space error message$")
+    public void userShouldSeeBatchCodeInputHasSpaceErrorMessage() {
+        createBatchPage.codeInputOnlyAlphanumericErrorMessage().shouldBeVisible();
+    }
 }
