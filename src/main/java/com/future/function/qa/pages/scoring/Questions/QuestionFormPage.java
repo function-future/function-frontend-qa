@@ -19,7 +19,7 @@ public class QuestionFormPage extends MenuPage {
     }
 
     public WebElementFacade optionSection(int index) {
-        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/div[%s]", index + 1)));
+        return find(By.xpath(String.format("//div[@class='question-form__container-options-detail']//div[%s]//div[1]//input[1]", index + 1)));
     }
 
     public WebElementFacade optionRadio(int index) {
