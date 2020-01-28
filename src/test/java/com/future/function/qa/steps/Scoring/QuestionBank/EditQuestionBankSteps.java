@@ -1,7 +1,7 @@
 package com.future.function.qa.steps.Scoring.QuestionBank;
 
+import com.future.function.qa.pages.scoring.QuestionBanks.QuestionBankDetailPage;
 import com.future.function.qa.pages.scoring.QuestionBanks.QuestionBankFormPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
