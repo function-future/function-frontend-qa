@@ -18,6 +18,10 @@ public class QuestionDetailPage extends MenuPage {
         return find(By.xpath("//div[@class='question__container__header-title has-text-centered']//article[@class='tile is-child box']"));
     }
 
+    public WebElementFacade optionContainer() {
+        return find(By.xpath("//div[@class='question__container__options']"));
+    }
+
     public WebElementFacade optionBox(int row, int column) {
         return find(By.xpath(String.format("//div[@class='question__container']//div[%s]//div[%s]//article[1]", row + 1, column + 1)));
     }

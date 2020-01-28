@@ -34,4 +34,8 @@ public class QuestionBankDetailPage extends MenuPage {
         return find(By.xpath("//div[@id='contentIdForA11y3']"));
     }
 
+    public WebElementFacade questionListItem(int row) {
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[4]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[%s]/div[1]", row + 1 )));
+    }
+
 }
