@@ -12,7 +12,7 @@ Feature: Question Detail
     And user should be in homepage
 
   @Positive @AccessingQuestionDetail
-  Scenario: user access question bank detail page
+  Scenario: user access question detail page
     Given user should be logged in
     And user should see menu bar
     And user should see grades menu with index 8
