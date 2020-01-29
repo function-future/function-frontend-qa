@@ -22,12 +22,10 @@ public class GradesPage extends MenuPage {
     }
 
     public WebElementFacade gradesTabItemContentData(int tabIdx, int row) {
-        return find(By.xpath(String.format("//body/div[@class='app']" +
-                "/div[@class='main-container is-fullhd']" +
-                "/div[@class='main-content']" +
-                "/div[@class='auto-overflow-container scoring-container']/section" +
+        return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']" +
+                "/div[@class='main-content']/div[@class='auto-overflow-container scoring-container']/section" +
                 "/div[@class='b-tabs scoring__header-tabs']/section[@class='tab-content']" +
-                "/div[%s]/section[1]/div[%s]", tabIdx + 1, row + 1)));
+                "/div[%s]/section[1]/div[%s]/div[1]", tabIdx + 1, row + 1)));
     }
 
     public WebElementFacade addGradesItemBtn(int tabIdx) {

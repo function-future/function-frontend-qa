@@ -34,4 +34,24 @@ public class QuestionBankDetailPage extends MenuPage {
         return find(By.xpath("//div[@id='contentIdForA11y3']"));
     }
 
+    public WebElementFacade questionListItem(int row) {
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[4]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[%s]/div[1]", row + 1 )));
+    }
+
+    public WebElementFacade questionListItemMoreAction(int row) {
+        return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']" +
+                "/div[@class='main-content']/div[@class='auto-overflow-container']" +
+                "/div[@class='question-bank__container']/div[@class='question-bank__container__questions-list']/section" +
+                "/div[@class='collapse card']/div[@id='contentIdForA11y3']/div[@class='card-content overflow-container']" +
+                "/div[@class='content']/div/div[%s]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]", row + 1)));
+    }
+
+    public WebElementFacade questionListItemActionsContainer() {
+        return find(By.xpath("//div[@class='dropdown is-bottom-left is-active is-mobile-modal']//div[@class='dropdown-content']"));
+    }
+
+    public WebElementFacade questionListItemAction(int row) {
+        return find(By.xpath(String.format("//div[@class='dropdown is-bottom-left is-active is-mobile-modal']//a[%s]", row + 1)));
+    }
+
 }
