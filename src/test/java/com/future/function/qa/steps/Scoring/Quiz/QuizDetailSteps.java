@@ -49,6 +49,21 @@ public class QuizDetailSteps {
         detailPage.startBtn().shouldNotBeVisible();
     }
 
+    @When("^user click edit quiz button$")
+    public void userClickEditQuizButton() {
+        detailPage.editBtn().click();
+    }
+
+    @When("^user click delete quiz button$")
+    public void userClickDeleteQuizButton() {
+        detailPage.deleteBtn().click();
+    }
+
+    @When("^user click start quiz button$")
+    public void userClickStartQuizButton() {
+        detailPage.startBtn().click();
+    }
+
     @And("^user should see quiz title$")
     public void userShouldSeeQuizTitle() {
         detailPage.quizTitle().shouldBeVisible();
@@ -85,4 +100,14 @@ public class QuizDetailSteps {
         detailPage.questionBankList().shouldNotBeVisible();
     }
 
+
+    @And("^quiz title should be updated to \"([^\"]*)\"$")
+    public void quizTitleShouldBeUpdatedTo(String title) {
+        assertTrue(detailPage.quizTitle().getText().contains(title));
+    }
+
+    @And("^quiz description should be updated to \"([^\"]*)\"$")
+    public void quizDescriptionShouldBeUpdatedTo(String desc) {
+        assertTrue(detailPage.quizDescription().getText().contains(desc));
+    }
 }

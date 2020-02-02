@@ -8,12 +8,17 @@ import cucumber.api.java.en.When;
 
 import static org.junit.Assert.assertTrue;
 
-public class AddQuizSteps {
+public class QuizFormSteps {
 
     private QuizFormPage formPage;
 
     @Then("^user should be on add quiz page$")
     public void userShouldBeOnAddQuizPage() {
+        formPage.shouldBeDisplayed();
+    }
+
+    @Then("^user should be on edit quiz page$")
+    public void userShouldBeOnEditQuizPage() {
         formPage.shouldBeDisplayed();
     }
 

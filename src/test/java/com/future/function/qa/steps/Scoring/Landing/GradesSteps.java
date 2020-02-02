@@ -75,6 +75,11 @@ public class GradesSteps {
         gradesPage.findGradesItemActionDropdownButton(tabIdx, row).shouldNotBeVisible();
     }
 
+    @When("^user clicks action dropdown button on tab (\\d+) item with index (\\d+)$")
+    public void userClicksAssignmentActionDropdownButtonOnTabItemWithIndex(int tabIdx, int row) {
+        gradesPage.findGradesItemActionDropdownButton(tabIdx, row).click();
+    }
+
     @And("^user should see passed item checkbox on tab (\\d+)$")
     public void userShouldSeePassedItemCheckboxOnTab(int tabIdx) {
         gradesPage.findPassedItemCheckbox(tabIdx).shouldBeVisible();
