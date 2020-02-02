@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
 @DefaultUrl("http://localhost:10001/batches/batchCode/assignments/add")
-public class AddAssignmentPage extends MenuPage {
+public class AssignmentFormPage extends MenuPage {
 
   public WebElementFacade assignmentTitleForm() {
     return find(By.xpath("//div[@class='assignment-form__container-title']//div[@class='field']"));

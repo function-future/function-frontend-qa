@@ -5,6 +5,7 @@ import com.future.function.qa.pages.scoring.Assignment.AssignmentDetailPage;
 import com.future.function.qa.pages.scoring.Landing.GradesPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class AssignmentDetailSteps {
 

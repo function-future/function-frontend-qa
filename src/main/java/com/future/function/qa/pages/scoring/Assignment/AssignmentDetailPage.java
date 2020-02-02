@@ -33,7 +33,27 @@ public class AssignmentDetailPage extends MenuPage {
   }
 
   public WebElementFacade deleteBtn() {
-    return find(By.xpath("//button[@class='button is-primary is-rounded']"));
+    return find(By.xpath("//button[@class='button is-danger is-rounded']"));
+  }
+
+  public WebElementFacade deleteModal() {
+    return find(By.xpath("//div[@class='modal__container']"));
+  }
+
+  public WebElementFacade  deleteModalBody() {
+    return find(By.xpath("//div[@class='modal__body']"));
+  }
+
+  public WebElementFacade cancelBtn() {
+    return find(By.xpath("//button[@class='button modal__footer__button is-light is-fullwidth']"));
+  }
+
+  public WebElementFacade deleteConfirmBtn() {
+    return find(By.xpath("//button[@class='button modal__footer__button is-danger is-fullwidth']"));
+  }
+
+  public WebElementFacade closeModalBtn() {
+    return find(By.xpath("//span[@class='modal__close']"));
   }
 
 }
