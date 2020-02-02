@@ -110,4 +110,24 @@ public class QuizDetailSteps {
     public void quizDescriptionShouldBeUpdatedTo(String desc) {
         assertTrue(detailPage.quizDescription().getText().contains(desc));
     }
+
+    @When("^user clicks on delete quiz button$")
+    public void userClicksOnDeleteQuizButton() {
+        detailPage.deleteBtn().click();
+    }
+
+    @Then("^user should see delete quiz confirmation modal$")
+    public void userShouldSeeDeleteQuizConfirmationModal() {
+        detailPage.deleteQuizModal().shouldBeVisible();
+    }
+
+    @And("^user clicks on delete quiz confirmation button$")
+    public void userClicksOnDeleteQuizConfirmationButton() {
+        detailPage.deleteModalConfirmBtn().click();
+    }
+
+    @When("^user clicks cancel delete quiz button$")
+    public void userClicksCancelDeleteQuizButton() {
+        detailPage.deleteModalCancelBtn().click();
+    }
 }

@@ -46,4 +46,20 @@ public class QuizDetailPage extends MenuPage {
         return find(By.xpath("//button[@class='button is-primary']"));
     }
 
+    public WebElementFacade deleteQuizModal() {
+        return find(By.xpath("//div[@class='modal__container']"));
+    }
+
+    public WebElementFacade deleteModalCloseButton() {
+        return find(By.xpath("//span[@class='icon lg']"));
+    }
+
+    public WebElementFacade deleteModalCancelBtn() {
+        return find(By.xpath("//button[@class='button modal__footer__button is-light is-fullwidth']"));
+    }
+
+    public WebElementFacade deleteModalConfirmBtn() {
+        return find(By.xpath("//button[@class='button modal__footer__button is-danger is-fullwidth']"));
+    }
+
 }
