@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class QuizDetailSteps {
@@ -129,5 +130,35 @@ public class QuizDetailSteps {
     @When("^user clicks cancel delete quiz button$")
     public void userClicksCancelDeleteQuizButton() {
         detailPage.deleteModalCancelBtn().click();
+    }
+
+    @Then("^user should see copy quiz modal$")
+    public void userShouldSeeCopyQuizModal() {
+        detailPage.copyQuizModal().shouldBeVisible();
+    }
+
+    @And("^user clicks on batch number (\\d+) in quiz copy modal$")
+    public void userClicksOnBatchNumberInQuizCopyModal(int row) {
+        detailPage.copyQuizModalItem(row).click();
+    }
+
+    @When("^user clicks on the copy quiz confirmation button$")
+    public void userClicksOnTheCopyQuizConfirmationButton() {
+        detailPage.copyQuizConfirmationButton().click();
+    }
+
+    @And("^user should see close copy quiz button$")
+    public void userShouldSeeCloseCopyQuizButton() {
+        detailPage.copyQuizCloseBtn().shouldBeVisible();
+    }
+
+    @And("^user should see cancel copy button$")
+    public void userShouldSeeCancelCopyButton() {
+        detailPage.copyQuizCancelBtn().shouldBeVisible();
+    }
+
+    @And("^user should see confirmation button being disabled$")
+    public void userShouldSeeConfirmationButtonBeingDisabled() {
+        assertFalse(detailPage.copyQuizConfirmationButton().isEnabled());
     }
 }

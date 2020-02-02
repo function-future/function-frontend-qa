@@ -62,4 +62,27 @@ public class QuizDetailPage extends MenuPage {
         return find(By.xpath("//button[@class='button modal__footer__button is-danger is-fullwidth']"));
     }
 
+    public WebElementFacade copyQuizModal() {
+        return find(By.xpath("//div[@class='modal__container']"));
+    }
+
+    public WebElementFacade copyQuizModalItem(int row) {
+        return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']" +
+                "/div[@class='main-content']/div[@class='auto-overflow-container scoring-container']" +
+                "/div[@class='modal__mask']/div[@class='modal__wrapper']/div[@class='modal__container']" +
+                "/div[@class='modal__body']/div[%s]/div[2]/div[1]", row + 1)));
+    }
+
+    public WebElementFacade copyQuizConfirmationButton() {
+        return find(By.xpath("//button[@class='button modal__footer__button is-primary is-fullwidth']"));
+    }
+
+    public WebElementFacade copyQuizCancelBtn() {
+        return find(By.xpath("//button[@class='button modal__footer__button is-light is-fullwidth']"));
+    }
+
+    public WebElementFacade copyQuizCloseBtn() {
+        return find(By.xpath("//span[@class='icon lg']"));
+    }
+
 }
