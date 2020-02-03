@@ -7,7 +7,7 @@ import net.thucydides.core.annotations.NamedUrl;
 import org.openqa.selenium.By;
 
 @NamedUrl(name = "batchCode", url = UrlConstant.ADD_JUDGING_URL)
-public class AddJudgingPage extends MenuPage {
+public class JudgingFormPage extends MenuPage {
 
   public WebElementFacade titleLabel() {
     return find(By.xpath("//label[@class='label']"));

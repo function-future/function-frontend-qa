@@ -1,4 +1,4 @@
-@JudgingList @Regression
+@JudgingList @Scoring @Regression
 Feature: JudgingList
 
   Background:
@@ -18,26 +18,14 @@ Feature: JudgingList
     Then user should see dropdown as an indicator of logging in
     When user click logout button
     Then user should be in homepage
-    And user should not see comparisons menu
-
-  @Negative @AccessingJudgingListWithServerProblem
-  Scenario: Accessing Judging List With Server Problem
-    Given user is logged in
-    When user see comparisons menu
-    And user click comparisons menu
-    Then user should see danger toast with message "Terjadi Kesalahan pada Sistem"
-    And user should not see judging data list
-    And user should see add judging button
-    And user should see view final score button
-    And user should see select batch dropdown
-    And user should not see paging section
+    And user should not see comparisons menu with index 9
 
   @Positive @AccessingJudgingList
-  Scenario: Accessing Judging List
+  Scenario: Accessing Judging List as Admin
     Given user should be logged in
     And user should see menu bar
-    And user should see comparisons menu
-    When user click comparisons menu
+    And user should see comparisons menu with index 9
+    When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see judging data list
     And user should see add judging button

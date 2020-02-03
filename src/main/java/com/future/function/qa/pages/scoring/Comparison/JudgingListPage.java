@@ -11,32 +11,24 @@ public class JudgingListPage extends PaginationPage {
 
   public WebElementFacade findJudgingDataList() {
 
-    return find(By.xpath("//div[@class='judging-container']"));
+    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]"));
   }
 
   public WebElementFacade findJudgingData(int row) {
 
     return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']" +
-        "/div[@class='main-content']" +
-        "/div[@class='auto-overflow-container']/div[@class='judging-container']/div[%s]", row + 1)));
+        "/div[@class='main-content']/div[@class='auto-overflow-container']" +
+        "/div[@class='judging-container']/div/div[%s]/div[1]", row + 1)));
   }
 
   public WebElementFacade judgingDataTitle(int row) {
-    return find(By.xpath(String.format("//body/div[@class='app']" +
-        "/div[@class='main-container is-fullhd']" +
-        "/div[@class='main-content']" +
-        "/div[@class='auto-overflow-container']" +
-        "/div[@class='judging-container']" +
-        "/div[%s]/div[1]/div[1]/div[1]", row + 1)));
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[%s]/div[1]" +
+        "/div[1]/div[1]/div[1]", row + 1)));
   }
 
   public WebElementFacade judgingDataDescription(int row) {
-    return find(By.xpath(String.format("//body/div[@class='app']" +
-        "/div[@class='main-container is-fullhd']" +
-        "/div[@class='main-content']" +
-        "/div[@class='auto-overflow-container']" +
-        "/div[@class='judging-container']" +
-        "/div[%s]/div[1]/div[1]/div[2]", row + 1)));
+    return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]" +
+        "/div[%s]/div[1]/div[1]/div[2]/div[1]/span[1]/p[1]", row + 1)));
   }
 
   public WebElementFacade addJudgingButton() {

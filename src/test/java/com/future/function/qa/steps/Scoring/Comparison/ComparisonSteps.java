@@ -17,7 +17,7 @@ public class ComparisonSteps {
   @When("^user click the last final judging data$")
   public void userClickTheLastFinalJudgingData() {
     int lastIndex = judgingListPage.countJudgingDataList();
-    judgingListPage.findJudgingData(lastIndex).click();
+    judgingListPage.findJudgingData(lastIndex-1).click();
   }
 
   @And("^user should see (\\d+) student detail in student list section$")

@@ -1,4 +1,5 @@
-Feature: Add Judging
+@Judging @Scoring @Regression
+Feature: Comparison Feature
 
   Background:
     When user access function website
@@ -14,8 +15,8 @@ Feature: Add Judging
   Scenario: Add Judging Page Then See The Added Judging Detail And Its Comparison As Admin
     Given user should be logged in
     And user should see menu bar
-    And user should see comparisons menu with index 7
-    When user click comparisons menu with index 7
+    And user should see comparisons menu with index 9
+    When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see add judging button
     When user click add judging button
