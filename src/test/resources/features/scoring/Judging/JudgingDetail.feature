@@ -1,3 +1,4 @@
+@Judging @Scoring @Regression
 Feature: Judging Detail Feature
 
   Background:
@@ -14,15 +15,11 @@ Feature: Judging Detail Feature
   Scenario: Accessing Judging Detail Page as Admin
     Given user should be logged in
     And user should see menu bar
-    And user should see comparisons menu
-    When user click comparisons menu
+    And user should see comparisons menu with index 9
+    When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see judging data list
-    When user get title label in the data in row number 1
-    And user get description label in the data in row number 1
     And user click judging data list in row number 1
     Then user should be in final judging detail page
-    And user should see title label with text the same as the stored title
-    And user should see description label with text the same as the stored description
     And user should see student list section
     And user should see action bar

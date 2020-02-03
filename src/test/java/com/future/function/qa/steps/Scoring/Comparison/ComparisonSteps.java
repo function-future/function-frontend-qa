@@ -14,12 +14,6 @@ public class ComparisonSteps {
 
   private JudgingDetailPage judgingDetailPage;
 
-  @When("^user click the last final judging data$")
-  public void userClickTheLastFinalJudgingData() {
-    int lastIndex = judgingListPage.countJudgingDataList();
-    judgingListPage.findJudgingData(lastIndex).click();
-  }
-
   @And("^user should see (\\d+) student detail in student list section$")
   public void userShouldSeeStudentDetailInStudentListSection(int expectedSize) {
     assertEquals(judgingDetailPage.countStudentDetailList(), expectedSize);

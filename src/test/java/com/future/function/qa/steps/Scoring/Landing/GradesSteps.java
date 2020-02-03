@@ -66,13 +66,18 @@ public class GradesSteps {
     }
 
     @And("^user should see action dropdown button on tab (\\d+) item with index (\\d+)$")
-    public void userShouldSeeAssignmentActionDropdownButtonOnTabItemWithIndex(int tabIdx, int row) {
+    public void userShouldSeeActionDropdownButtonOnTabItemWithIndex(int tabIdx, int row) {
         gradesPage.findGradesItemActionDropdownButton(tabIdx, row).shouldBeVisible();
     }
 
     @And("^user should not see action dropdown button on tab (\\d+) item with index (\\d+)$")
-    public void userShouldNotSeeAssignmentActionDropdownButtonOnTabItemWithIndex(int tabIdx, int row) {
+    public void userShouldNotSeeActionDropdownButtonOnTabItemWithIndex(int tabIdx, int row) {
         gradesPage.findGradesItemActionDropdownButton(tabIdx, row).shouldNotBeVisible();
+    }
+
+    @When("^user clicks action dropdown button on tab (\\d+) item with index (\\d+)$")
+    public void userClicksActionDropdownButtonOnTabItemWithIndex(int tabIdx, int row) {
+        gradesPage.findGradesItemActionDropdownButton(tabIdx, row).click();
     }
 
     @And("^user should see passed item checkbox on tab (\\d+)$")
