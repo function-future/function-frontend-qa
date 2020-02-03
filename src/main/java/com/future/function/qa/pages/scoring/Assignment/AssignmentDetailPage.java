@@ -1,11 +1,12 @@
 package com.future.function.qa.pages.scoring.Assignment;
 
+import com.future.function.qa.model.UrlConstant;
 import com.future.function.qa.pages.base.MenuPage;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
-@DefaultUrl(value = "http://localhost:10001/batches/batchCode/assignments/assignmentId/detail")
+@DefaultUrl(value = UrlConstant.ASSIGNMENT_DETAIL_URL)
 public class AssignmentDetailPage extends MenuPage {
 
   public WebElementFacade assignmentTitle() {

@@ -1,3 +1,4 @@
+@Assignment @Scoring @Regression
 Feature: Add Assignment Feature
 
   Background:
@@ -35,7 +36,7 @@ Feature: Add Assignment Feature
     When user type "Assignment Title 1" in assignment title input
     And user type "Assignment Description 1" in assignment description input
     And user click assignment save button
-#    Then user should see toast success with message "Success Save Assignment"
+    Then user should see toast success with message "Successfully created assignment"
     Then user should be in grades page
 
   @Negative @AddAssignmentWithNoTitleAndDescription

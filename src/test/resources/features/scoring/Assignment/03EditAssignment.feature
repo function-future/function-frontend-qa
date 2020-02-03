@@ -42,7 +42,7 @@ Feature: Edit Assignment Feature
     And user type "Assignment Title 1 Edited" in assignment title input
     And user type "Assignment Description 1 Edited" in assignment description input
     And user click assignment save button
-#    Then user should see toast success with message "Success Save Assignment"
+    Then user should see toast success with message "Successfully edited this assignment"
     Then user should be in grades page
 
   @Negative @EditAssignmentWithNoTitleAndDescription
@@ -74,7 +74,6 @@ Feature: Edit Assignment Feature
     When user remove text from assignment title input
     And user remove text from assignment description input
     And user click assignment save button
-#    Then user should see toast success with message "Success Save Assignment"
     Then user should see toast danger with message "Fail to create assignment"
 
   @Negative @EditAssignmentAsOtherRole

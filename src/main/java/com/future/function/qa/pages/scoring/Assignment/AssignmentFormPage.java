@@ -5,7 +5,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
-@DefaultUrl("http://localhost:10001/batches/batchCode/assignments/add")
 public class AssignmentFormPage extends MenuPage {
 
   public WebElementFacade assignmentTitleForm() {

@@ -21,5 +21,6 @@ public interface UrlConstant {
   String ADD_JUDGING_URL = "http://localhost:10001/batches/{1}/final-judging/add";
   String JUDGING_DETAIL_URL = "http://localhost:10001/batches/{1}/final-judgings/{2}/detail";
   String SCORING_URL = "http://localhost:10001/scoring";
+  String ASSIGNMENT_DETAIL_URL = "http://localhost:10001/batches/batchCode/assignments/assignmentId/detail";
 
 }
