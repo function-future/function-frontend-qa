@@ -27,7 +27,7 @@ public class JudgingDetailPage extends MenuPage {
   }
 
   public WebElementFacade studentList() {
-    return find(By.xpath("//div[@class='judging-session__content level']"));
+    return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]"));
   }
 
   public WebElementFacade studentDetail(int index) {
@@ -72,6 +72,14 @@ public class JudgingDetailPage extends MenuPage {
       return find(By.xpath("//div[@class='main-content']//div[2]//div[1]//div[3]//div[1]//p[1]//button[1]"));
     }
     return null;
+  }
+
+  public WebElementFacade editBtn() {
+    return find(By.xpath("//button[@class='button is-primary is-rounded']"));
+  }
+
+  public WebElementFacade deleteBtn() {
+    return find(By.xpath("//button[@class='button is-danger is-rounded']"));
   }
 
 }

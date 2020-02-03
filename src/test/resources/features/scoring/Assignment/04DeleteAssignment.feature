@@ -23,7 +23,7 @@ Feature: Delete Assignment Feature
     And user should click item number 0 on grades page tab number 2
     Then user should be on assignment detail page
     When user click delete assignment button
-    Then user should see delete assignment confirmation modal
+    Then user should see delete confirmation modal
     And user should see delete confirmation text "Are you sure you want to delete this assignment?"
     And user should see close modal button
     And user should see cancel delete button

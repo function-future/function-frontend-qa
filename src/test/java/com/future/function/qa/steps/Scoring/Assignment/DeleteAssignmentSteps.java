@@ -50,9 +50,4 @@ public class DeleteAssignmentSteps {
     public void userClickCloseModalButton() {
         assignmentDetailPage.closeModalBtn().click();
     }
-
-    @Then("^user should see delete assignment confirmation modal$")
-    public void userShouldSeeDeleteAssignmentConfirmationModal() {
-        assignmentDetailPage.deleteModal().shouldBeVisible();
-    }
 }

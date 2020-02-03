@@ -1,3 +1,4 @@
+@Judging @Scoring @Regression
 Feature: Add Judging
 
   Background:
@@ -14,12 +15,12 @@ Feature: Add Judging
   Scenario: Accessing Add Judging Page
     Given user should be logged in
     And user should see menu bar
-    And user should see comparisons menu
-    When user click comparisons menu
+    And user should see comparisons menu with index 9
+    When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see add judging button
     When user click add judging button
-    Then user should be in add final judging page
+    Then user should be in final judging form page
     And user should see title label
     And user should see title input
     And user should see description label
@@ -52,12 +53,12 @@ Feature: Add Judging
   Scenario: Accessing Add Judging Page
     Given user should be logged in
     And user should see menu bar
-    And user should see comparisons menu
-    When user click comparisons menu
+    And user should see comparisons menu with index 9
+    When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see add judging button
     When user click add judging button
-    Then user should be in add final judging page
+    Then user should be in final judging form page
     And user should see title label
     And user should see title input
     And user should see description label
@@ -70,12 +71,12 @@ Feature: Add Judging
   Scenario: Accessing Add Judging Page
     Given user should be logged in
     And user should see menu bar
-    And user should see comparisons menu
-    When user click comparisons menu
+    And user should see comparisons menu with index 9
+    When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see add judging button
     When user click add judging button
-    Then user should be in add final judging page
+    Then user should be in final judging form page
     And user should see title label
     And user should see title input
     And user should see description label
