@@ -21,6 +21,14 @@ public class RemindersPage extends MenuPage {
     return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']/div[@class='main-content']/div[@class='reminder']/div[@class='reminder__body']/div[%s]", idx)));
   }
 
+  public WebElementFacade reminderTitle(int idx) {
+    return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']/div[@class='main-content']/div[@class='reminder']/div[@class='reminder__body']/div[%s]//h3", idx)));
+  }
+
+  public WebElementFacade reminderDescription(int idx) {
+    return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']/div[@class='main-content']/div[@class='reminder']/div[@class='reminder__body']/div[%s]//p[1]", idx)));
+  }
+
   public WebElementFacade deleteButton(int idx) {
     return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']/div[@class='main-content']/div[@class='reminder']/div[@class='reminder__body']/div[%s]/div[1]/*[2]", idx)));
   }

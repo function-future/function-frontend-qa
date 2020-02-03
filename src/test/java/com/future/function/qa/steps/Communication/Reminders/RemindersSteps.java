@@ -5,9 +5,14 @@ import com.future.function.qa.pages.communication.Reminder.ReminderDetailPage;
 import com.future.function.qa.pages.communication.Reminder.ReminderEditPage;
 import com.future.function.qa.pages.communication.Reminder.RemindersPage;
 import com.future.function.qa.pages.core.HomePage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.core.pages.WebElementFacade;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class RemindersSteps {
 
@@ -75,5 +80,47 @@ public class RemindersSteps {
   @And("^user click save create reminder button$")
   public void userClickSaveCreateReminderButton() {
     reminderCreatePage.saveButton().click();
+  }
+
+  @When("^user click delete reminder$")
+  public void userClickDeleteReminder() {
+    remindersPage.deleteButton(1).click();
+  }
+
+  @And("^user should be in reminder detail page$")
+  public void userShouldBeInReminderDetailPage() {
+    reminderDetailPage.shouldBeDisplayed();
+  }
+
+  @Then("^user should see first reminder card with title \"([^\"]*)\" and description \"([^\"]*)\"$")
+  public void userShouldSeeFirstReminderCardWithTitleAndDescription(String title, String description) throws Throwable {
+    assertThat(remindersPage.reminderTitle(1).getText(), equalTo(title));
+    assertThat(remindersPage.reminderDescription(1).getText(), equalTo(description));
+  }
+
+  @When("^user click a reminder card$")
+  public void userClickAReminderCard() {
+    remindersPage.reminderBox(1).click();
+  }
+
+  @When("^user click edit button in reminder detail page$")
+  public void userClickEditButtonInReminderDetailPage() {
+    reminderDetailPage.editButton().click();
+  }
+
+  @Then("^user should be in reminder edit page$")
+  public void userShouldBeInReminderEditPage() {
+    reminderEditPage.shouldBeDisplayed();
+  }
+
+  @When("^user change title to \"([^\"]*)\" and description to \"([^\"]*)\"$")
+  public void userChangeTitleToAndDescriptionTo(String title, String description) throws Throwable {
+    reminderEditPage.titleInput().type(title);
+    reminderEditPage.descriptionInput().type(description);
+  }
+
+  @And("^user click save edit reminder button$")
+  public void userClickSaveEditReminderButton() {
+    reminderEditPage.saveButton().click();
   }
 }

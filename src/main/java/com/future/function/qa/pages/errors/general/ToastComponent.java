@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 public class ToastComponent extends PageObject {
 
   public WebElementFacade toastDanger() {
-    return find(By.xpath("//div[@class='toasted toaster bubble error']"));
+    return find(By.xpath("//div[@class='toast is-danger is-bottom']"));
   }
 
   public WebElementFacade toastSuccess() {

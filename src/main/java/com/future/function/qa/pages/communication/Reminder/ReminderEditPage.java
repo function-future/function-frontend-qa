@@ -5,5 +5,5 @@ import com.future.function.qa.pages.base.MenuPage;
 import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl(UrlConstant.REMINDER_EDIT_URL)
-public class ReminderEditPage extends MenuPage {
+public class ReminderEditPage extends ReminderCreatePage {
 }
