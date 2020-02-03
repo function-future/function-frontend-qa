@@ -83,13 +83,13 @@ public class RoomDetailSteps {
         roomDetailPage.discussionDropdown().click();
     }
 
-    @Then("^user should see room discussions$")
-    public void userShouldSeeRoomDiscussions() {
-        roomDetailPage.discussions().shouldBeVisible();
+    @Then("^user should see room discussions as \"([^\"]*)\"$")
+    public void userShouldSeeRoomDiscussions(String role) {
+        roomDetailPage.discussions(role).shouldBeVisible();
     }
 
-    @Then("^user should not see room discussions$")
-    public void userShouldNotSeeRoomDiscussions() {
-        roomDetailPage.discussions().shouldNotBeVisible();
+    @Then("^user should not see room discussions as \"([^\"]*)\"$")
+    public void userShouldNotSeeRoomDiscussions(String role) {
+        roomDetailPage.discussions(role).shouldNotBeVisible();
     }
 }

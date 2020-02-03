@@ -1,4 +1,4 @@
-@Comment @Scoring @Regression
+@Room @Comment @Scoring @Regression
 Feature: Add Comment Feature
 
   Background:
@@ -44,7 +44,7 @@ Feature: Add Comment Feature
     And user should see room assignment description
     And user should see room discussion section
     And user should see room discussion dropdown
-    And user should see room discussions
+    And user should see room discussions as "ADMIN"
     And user should see add comment input with attribute "disabled"
 
   @Positive @AddCommentAsMentor
@@ -87,8 +87,39 @@ Feature: Add Comment Feature
     And user should see room assignment description
     And user should see room discussion section
     And user should see room discussion dropdown
-    And user should see room discussions
+    And user should see room discussions as "MENTOR"
     And user should see add comment input with no attribute "disabled"
     When user type "halo" in comment input
+    And user click post comment button
+    Then user should see toast success with message "Successfully posted comment on this discussion"
+
+  @Positive @AddCommentAsStudent
+  Scenario: Go to Room List as Admin
+    Given user click user section
+    Then user should see dropdown as an indicator of logging in
+    When user click logout button
+    Then user should be in homepage
+    And user should see login bar
+    When user click login button
+    Then user should see login modal
+    When user login with these credentials
+      | email    | oliver@gmail.com          |
+      | password | oliverfunctionapp          |
+    Then user should be in homepage
+    And user should see menu bar
+    And user should see grades menu with index 6
+    And user click grades menu with index 6
+    And user should be in grades page
+    And user clicks on the grades tab with index 1
+    And user should see grades tab list on index 1 having "class" attribute with "is-active"
+    And user should click item number 0 on grades page tab number 1
+    Then user should be in room detail page
+    And user should see room assignment title
+    And user should see room assignment description
+    And user should see room discussion section
+    And user should see room discussion dropdown
+    And user should see room discussions as "STUDENT"
+    And user should see add comment input with no attribute "disabled"
+    When user type "Hello !" in comment input
     And user click post comment button
     Then user should see toast success with message "Successfully posted comment on this discussion"

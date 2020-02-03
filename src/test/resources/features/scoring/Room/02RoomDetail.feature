@@ -44,7 +44,7 @@ Feature: Room Detail Feature
     And user should see room assignment description
     And user should see room discussion section
     And user should see room discussion dropdown
-    And user should see room discussions
+    And user should see room discussions as "ADMIN"
     And user should see add comment input with attribute "disabled"
     When user click room discussion dropdown
     Then user should not see room discussions

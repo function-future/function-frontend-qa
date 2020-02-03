@@ -22,8 +22,10 @@ public class RoomDetailPage extends MenuPage {
         return find(By.xpath("//a[@class='card-header-icon']"));
     }
 
-    public WebElementFacade discussions() {
-        return find(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[4]/div[2]"));
+    public WebElementFacade discussions(String role) {
+        int index = role.equals("MENTOR") ? 4 : 3;
+        return find(By.xpath(String.format("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]" +
+            "/div[%s]/div[2]", index)));
     }
 
     public WebElementFacade commentInput() {

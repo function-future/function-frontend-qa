@@ -41,7 +41,7 @@ Feature: Add Room Score Feature
     And user should see room assignment description
     And user should see room discussion section
     And user should see room discussion dropdown
-    And user should see room discussions
+    And user should see room discussions as "MENTOR"
     And user should see room score section
     And user should see room score dropdown
     And user should see not see room score detail
