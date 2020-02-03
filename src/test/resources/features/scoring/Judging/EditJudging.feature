@@ -19,12 +19,8 @@ Feature: Edit Judging Feature
     When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see judging data list
-    When user get title label in the data in row number 0
-    And user get description label in the data in row number 0
-    And user click judging data list in row number 0
+    And user click judging data list in row number 1
     Then user should be in final judging detail page
-    And user should see title label with text the same as the stored title
-    And user should see description label with text the same as the stored description
     And user should see student list section
     And user should see action bar
     And user should see edit judging button

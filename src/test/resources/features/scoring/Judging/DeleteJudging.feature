@@ -19,7 +19,7 @@ Feature: Delete Judging Feature
     When user click comparisons menu with index 9
     Then user should be in final judging page
     And user should see judging data list
-    And user click the last final judging data
+    And user click judging data list in row number 2
     Then user should be in final judging detail page
     And user should see student list section
     And user should see action bar

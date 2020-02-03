@@ -18,7 +18,7 @@ public class JudgingListPage extends PaginationPage {
 
     return find(By.xpath(String.format("//body/div[@class='app']/div[@class='main-container is-fullhd']" +
         "/div[@class='main-content']/div[@class='auto-overflow-container']" +
-        "/div[@class='judging-container']/div/div[%s]/div[1]", row + 1)));
+        "/div[@class='judging-container']/div/div[%s]/div[1]", row)));
   }
 
   public WebElementFacade judgingDataTitle(int row) {
@@ -44,9 +44,5 @@ public class JudgingListPage extends PaginationPage {
   public WebElementFacade findSelectBatchDropdown() {
 
     return find(By.xpath("//div[@class='judging__action level']//div[2]"));
-  }
-
-  public int countJudgingDataList() {
-    return findJudgingDataList().findElements(By.className("list-wrapper")).size();
   }
 }
