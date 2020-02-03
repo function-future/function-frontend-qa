@@ -25,4 +25,6 @@ public interface UrlConstant {
   String REMINDER_CREATE_URL = "http://localhost:10001/reminders/create";
   String REMINDER_DETAIL_URL = "http://localhost:10001/reminders/{1}/detail";
   String REMINDER_EDIT_URL = "http://localhost:10001/reminders/{1}/edit";
+  String ASSIGNMENT_DETAIL_URL = "http://localhost:10001/batches/batchCode/assignments/assignmentId/detail";
+  
 }
