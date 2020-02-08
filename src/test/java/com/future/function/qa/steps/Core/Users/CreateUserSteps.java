@@ -43,6 +43,11 @@ public class CreateUserSteps {
         createUserPage.nameInput().type(randomString + " " + text);
     }
 
+    @And("^user type \"([^\"]*)\" in name input on create user page without random$")
+    public void userTypeInNameInputWithoutRandomString(String text) {
+        createUserPage.nameInput().type(text);
+    }
+
     @And("^user type \"([^\"]*)\" in phone input on create user page$")
     public void userTypeInPhoneInput(String text) {
         createUserPage.phoneInput().type(text);
@@ -51,6 +56,11 @@ public class CreateUserSteps {
     @And("^user type \"([^\"]*)\" in email input on create user page$")
     public void userTypeInEmailInput(String text) {
         createUserPage.emailInput().type(randomString + text);
+    }
+
+    @And("^user type \"([^\"]*)\" in email input on create user page without random$")
+    public void userTypeInEmailInputWithoutRandom(String text) {
+        createUserPage.emailInput().type(text);
     }
 
     @And("^user type \"([^\"]*)\" in university input on create user page$")

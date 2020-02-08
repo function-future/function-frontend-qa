@@ -26,5 +26,9 @@ public interface UrlConstant {
   String REMINDER_DETAIL_URL = "http://localhost:10001/reminders/{1}/detail";
   String REMINDER_EDIT_URL = "http://localhost:10001/reminders/{1}/edit";
   String ASSIGNMENT_DETAIL_URL = "http://localhost:10001/batches/batchCode/assignments/assignmentId/detail";
-  
+  String LOGGING_ROOMS_URL = "http://localhost:10001/logging-rooms";
+  String LOGGING_ROOM_CREATE_URL = "http://localhost:10001/logging-rooms/_create";
+  String LOGGING_ROOM_EDIT_URL = "http://localhost:10001/logging-rooms/edit";
+  String LOGGING_ROOM_DETAIL_URL = "http://localhost:10001/logging-rooms/{1}";
+  String LOGGING_ROOM_TOPIC_DETAIL_URL = "http://localhost:10001/logging-rooms/{1}/topics/{2}";
 }
